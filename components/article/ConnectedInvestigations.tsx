@@ -2,13 +2,15 @@
 
 import Link from 'next/link'
 import type { ArticleEntry } from '@/data/articles'
-import type { ThemeKey } from '@/data/articles/shared'
 
-const themeLabels: Record<ThemeKey, string> = {
+
+const themeLabels = {
   igaming: 'iGaming',
   crypto: 'Crypto',
   'dark-payments': 'Dark Payments',
-}
+} as const
+
+type ThemeKey = keyof typeof themeLabels
 
 type Props = {
   relatedArticles: ArticleEntry[]
