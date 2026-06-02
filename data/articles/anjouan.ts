@@ -8,13 +8,14 @@ import {
   callout,
 } from './shared'
 
-export const anjouanArticle = {
+export const anjouanArticle: Article = {
   eyebrow: 'Investigations',
   published: 'May 2026',
   readTime: '12 min read',
   title: 'Anjouan: Inside the Offshore Licensing Machine',
   dek: 'How a tiny island in the Comoros became one of the world’s most efficient licensing hubs for high-risk gambling operators.',
   heroImage: '/investigations/anjouan-dossier.png',
+  pairedInvestigationSlug: 'curacao',
   timelineAfterSectionId: 'intro',
 
   sections: [
@@ -49,9 +50,9 @@ export const anjouanArticle = {
           'That logic reshapes the relationship between regulator and applicant. In a traditional licensing environment, the license is the end of a long process. In Anjouan, the license is part of the launch kit — bundled together with Remote Onboarding, basic corporate setup and the practical expectation that the operator is not building a local business at all.'
         ),
         callout(
-  'INTELLIGENCE LAYER',
-  'The Anjouan model works because it treats licensing as infrastructure. The jurisdiction is valuable not for its domestic market, but for how efficiently it plugs into a broader offshore system.'
-)
+          'INTELLIGENCE LAYER',
+          'The Anjouan model works because it treats licensing as infrastructure. The jurisdiction is valuable not for its domestic market, but for how efficiently it plugs into a broader offshore system.'
+        ),
       ],
     },
     {
@@ -102,13 +103,10 @@ export const anjouanArticle = {
           'lg',
           'In that sense, the most important thing about Anjouan is not where it is. It is what it represents: a world where licensing becomes modular, onboarding becomes remote, traffic acquisition becomes industrial, and regulatory friction becomes something to route around rather than comply with.'
         ),
-        p(
-          'lg',
-          'That is the real offshore machine.'
-        ),
+        p('lg', 'That is the real offshore machine.'),
       ],
     },
-  ] satisfies ArticleSection[],
+  ],
 
   timeline: [
     {
@@ -150,15 +148,47 @@ export const anjouanArticle = {
     },
   ] satisfies SourceItem[],
 
-  sidebar: {
-    focus: 'Rapid offshore licensing infrastructure',
-    entities: [
-      'anjouan',
-      'cryptoSettlement',
-      'affiliateNetworks',
-      'remoteOnboarding',
-      'offshoreLicensing',
-    ],
+  sidebarBySection: {
+    intro: {
+      focus: 'A license in days',
+      entities: [
+        'anjouan',
+        'remoteOnboarding',
+        'offshoreLicensing',
+        'cryptoSettlement',
+      ],
+    },
+
+    'offshore-paradise': {
+      focus: 'An offshore product, not just a jurisdiction',
+      entities: ['anjouan', 'offshoreLicensing', 'remoteOnboarding'],
+    },
+
+    'distribution-layer': {
+      focus: 'The distribution and settlement layer',
+      entities: ['affiliateNetworks', 'cryptoSettlement', 'remoteOnboarding'],
+    },
+
+    'why-it-spreads': {
+      focus: 'Why the model keeps spreading',
+      entities: [
+        'anjouan',
+        'offshoreLicensing',
+        'affiliateNetworks',
+        'cryptoSettlement',
+      ],
+    },
+
+    conclusion: {
+      focus: 'Anjouan as the blueprint',
+      entities: [
+        'anjouan',
+        'offshoreLicensing',
+        'remoteOnboarding',
+        'affiliateNetworks',
+        'cryptoSettlement',
+      ],
+    },
   },
 
   connectedInvestigations: [
@@ -177,4 +207,4 @@ export const anjouanArticle = {
       entities: ['affiliateNetworks', 'cryptoSettlement'],
     },
   ] satisfies ConnectedInvestigation[],
-} satisfies Article
+}

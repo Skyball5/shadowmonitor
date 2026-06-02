@@ -68,6 +68,9 @@ export type IntelligenceSidebar = {
   focus: string
   entities: string[]
 }
+
+export type SidebarSectionMap = Record<string, IntelligenceSidebar>
+
 export const e = (id: EntityRefId): InlinePart => ({
   type: 'entity',
   id,
@@ -103,5 +106,7 @@ export type Article = {
   timeline: TimelineItem[]
   sources: SourceItem[]
   sidebar?: IntelligenceSidebar
+  sidebarBySection?: SidebarSectionMap
   connectedInvestigations: ConnectedInvestigation[]
+  pairedInvestigationSlug?: string
 }

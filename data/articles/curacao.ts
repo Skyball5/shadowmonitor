@@ -1,6 +1,5 @@
 import {
-  type ArticleBlock,
-  type InlinePart,
+  type Article,
   type ArticleSection,
   type TimelineItem,
   type SourceItem,
@@ -9,15 +8,60 @@ import {
   p,
   callout,
 } from './shared'
-export const curacaoArticle = {
+export const curacaoArticle: Article = {
   eyebrow: 'Investigations',
   published: 'May 2026',
+  publishedAt: '2026-05-02',
+themes: ['igaming'],
   readTime: '12 min read',
   title: 'The Colonial Bankruptcy Law Driving Gambling Operators Out of Curaçao',
   dek: 'Regulatory reform may be reshaping Curaçao’s gambling system — but operators say the deeper risk lies elsewhere.',
   heroImage: '/investigations/curacao-dossier.png',
+  pairedInvestigationSlug: 'anjouan',
   timelineAfterSectionId: 'intro',
-  sections: [
+  
+  sidebarBySection: {
+  intro: {
+  focus: 'The reform was aimed at licensing',
+  entities: ['lok', 'cga', 'law1931'],
+},
+
+'offshore-paradise': {
+  focus: 'Compliance replaces convenience',
+  entities: ['lok', 'cga', 'adr'],
+},
+
+law1931: {
+  focus: 'A bankruptcy law built for another era',
+  entities: ['law1931', 'curacao'],
+},
+
+sbgok: {
+  focus: 'Liability boundaries inside Curaçao were becoming less reliable',
+  entities: ['sbgok', 'cyberluck', 'trigonon'],
+},
+
+'bankruptcy-as-enforcement': {
+  focus: 'Bankruptcy became a negotiation tool',
+  entities: ['gameтech', 'dama'],
+},
+
+'empty-shells': {
+  focus: 'Winning in court did not guarantee recovery',
+  entities: ['bcgame', 'sbgok'],
+},
+
+'collapse-of-sbgok': {
+  focus: 'The player advocates became the story',
+  entities: ['sbgok'],
+},
+
+'what-happens-next': {
+  focus: 'Reform may increase the very risk it cannot fix',
+  entities: ['cga', 'lok', 'law1931', 'adr'],
+},
+},
+sections: [
     {
       id: 'intro',
       blocks: [

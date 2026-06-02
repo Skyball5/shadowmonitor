@@ -5,72 +5,37 @@ import EntityPanel from './EntityPanel'
 import EntityTag from './EntityTag'
 import { useEntitySelection } from './EntityContext'
 import type { Article } from '@/data/articles/shared'
+import { entities } from '@/lib/entities'
 
-const sidebarData: Record<
-  string,
-  {
-    focus: string
-    entities: string[]
-  }
-> = {
-  intro: {
-    focus: 'Regulatory transition under LOK',
-    entities: ['cga', 'lok', 'bcgame', 'law1931', 'adr'],
-  },
 
-  'offshore-paradise': {
-    focus: 'Collapse of the master-license system',
-    entities: ['cga', 'lok', 'bcgame', 'law1931'],
-  },
-
-  law1931: {
-    focus: 'Insolvency law as structural risk',
-    entities: ['law1931', 'bcgame', 'adr'],
-  },
-
-  sbgok: {
-    focus: 'Bankruptcy litigation ecosystem',
-    entities: ['sbgok', 'bijkerk', 'cramm', 'cyberluck', 'trigonon', 'adr'],
-  },
-
-  'bankruptcy-as-enforcement': {
-    focus: 'Bankruptcy as enforcement mechanism',
-    entities: ['gametech', 'dama', 'sbgok'],
-  },
-
-  'empty-shells': {
-    focus: 'Asset shielding and operator migration',
-    entities: ['araxio', 'rightnow', 'bcgame', 'blockdance', 'smallhouse'],
-  },
-
-  'collapse-of-sbgok': {
-    focus: 'Collapse of player-claim infrastructure',
-    entities: ['sbgok', 'bijkerk', 'cramm'],
-  },
-
-  'what-happens-next': {
-    focus: 'Contradictions inside the reform model',
-    entities: ['cga', 'lok', 'law1931', 'bcgame', 'sbgok', 'adr'],
-  },
-}
 
 export default function Sidebar({
   activeSection,
   article,
 }: {
   activeSection: string
-  article?: {
-    sidebar?: {
-      focus: string
-      entities: string[]
-    }
-  }
+  article?: Article
 }) {
   const { selectedEntityId } = useEntitySelection()
-  console.log('SIDEBAR ARTICLE:', article)
-console.log('SIDEBAR DATA:', article?.sidebar)
-  const data = article?.sidebar || sidebarData[activeSection] || sidebarData.intro
-
+  
+  const data = article?.sidebarBySection?.[activeSection]
+if (!data) return null
+console.log('SIDEBAR DEBUG', {
+  title: article?.title,
+  activeSection,
+  sidebarBySection: article?.sidebarBySection,
+  data: article?.sidebarBySection?.[activeSection],
+})
+console.log('SIDEBAR DEBUG', {
+  activeSection,
+  keys: Object.keys(article?.sidebarBySection ?? {}),
+  data: article?.sidebarBySection?.[activeSection],
+})
+console.log('SIDEBAR ENTITIES DEBUG', {
+  activeSection,
+  ids: data?.entities,
+  names: data?.entities?.map((id) => entities[id]?.name ?? `MISSING:${id}`),
+})
   return (
     <div className="sticky top-24 h-[calc(100vh-6rem)] flex flex-col gap-6 overflow-hidden">
       <motion.div

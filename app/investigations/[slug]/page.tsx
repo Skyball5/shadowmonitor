@@ -1,7 +1,6 @@
 import ArticleLayout from '@/components/article/ArticleLayout'
 import { notFound } from 'next/navigation'
-import { anjouanArticle } from '@/data/articles/anjouan'
-import { curacaoArticle } from '@/data/articles/curacao'
+import { articleMap, getRelatedArticles } from '@/data/articles'
 
 type Props = {
   params: Promise<{
@@ -11,15 +10,26 @@ type Props = {
 
 export default async function ArticlePage({ params }: Props) {
   const { slug } = await params
-  const articleMap = {
-  curacao: curacaoArticle,
-  anjouan: anjouanArticle,
-} as const
 
-const article = articleMap[slug as keyof typeof articleMap]
+  const article = articleMap[slug as keyof typeof articleMap]
 
   if (!article) {
     notFound()
   }
-  return <ArticleLayout article={article} />
+
+    const pairedSlug = article.pairedInvestigationSlug
+  const pairedArticle = pairedSlug
+    ? articleMap[pairedSlug as keyof typeof articleMap]
+    : undefined
+
+  const relatedArticles = getRelatedArticles(
+    slug as keyof typeof articleMap
+  )
+      return (
+    <ArticleLayout
+      article={article}
+      pairedArticle={pairedArticle}
+      relatedArticles={relatedArticles}
+    />
+  )
 }

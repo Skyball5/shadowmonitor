@@ -17,6 +17,7 @@ export default function Section({
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
+          console.log('SECTION ACTIVE:', id)
           setActiveSection(id)
         }
       },

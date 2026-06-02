@@ -1,24 +1,27 @@
 'use client'
 
 import { useState, type ReactNode } from 'react'
-import Image from 'next/image'
+import Link from 'next/link'
 import Sidebar from './Sidebar'
 import Section from './Section'
 import { EntitySelectionProvider } from './EntityContext'
-import TimelineBlock from './TimelineBlock'
 import ConnectedInvestigations from './ConnectedInvestigations'
 import type {
   Article,
   ArticleBlock,
   InlinePart,
 } from '@/data/articles/shared'
-
 import { entities } from '@/lib/entities'
 import EntityTag from './EntityTag'
+import PairedInvestigation from './PairedInvestigation'
+import type { ArticleEntry } from '@/data/articles'
 
 type ArticleLayoutProps = {
   article: Article
+  pairedArticle?: Article
+  relatedArticles?: ArticleEntry[]
 }
+
 function renderStringWithAutoChips(text: string): ReactNode[] {
   const entries = Object.values(entities)
     .flatMap((entity) =>
@@ -124,24 +127,24 @@ function renderBlock(block: ArticleBlock) {
 }
 
 function InvestigationHeroVisual({ article }: ArticleLayoutProps) {
-  
+  const heroImage =
+    article.heroImage?.trim() ||
+    (article.title.includes('Anjouan')
+      ? '/investigations/anjouan-dossier.png'
+      : '/investigations/curacao-dossier.png')
+
   return (
-    <div className="relative isolate overflow-hidden rounded-[30px] bg-neutral-950 min-h-[500px]">
+    <div className="relative isolate min-h-[500px] overflow-hidden rounded-[30px] bg-neutral-950">
       {/* subtle atmosphere */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_14%_18%,rgba(134,166,91,0.08),transparent_26%),radial-gradient(circle_at_80%_22%,rgba(134,166,91,0.06),transparent_20%),linear-gradient(180deg,rgba(255,255,255,0.03),transparent_28%)]" />
 
       {/* IMAGE */}
       <div className="absolute inset-y-0 right-0 w-[62%]">
-        const heroImage =
-  article.heroImage?.trim() ||
-  (article.title.includes('Anjouan')
-    ? '/investigations/anjouan-dossier.png'
-    : '/investigations/curacao-dossier.png')
         <img
-  src={article.heroImage}
-  alt="Procedural investigation artwork for Curaçao bankruptcy article"
-  className="h-full w-full object-cover object-[68%_50%] brightness-[1.04] contrast-[1.02]"
-/>
+          src={heroImage}
+          alt={article.title}
+          className="h-full w-full object-cover object-[68%_50%] brightness-[1.04] contrast-[1.02]"
+        />
 
         {/* edge fade */}
         <div className="absolute inset-0 bg-gradient-to-l from-black/10 via-black/8 to-transparent" />
@@ -166,27 +169,36 @@ function InvestigationHeroVisual({ article }: ArticleLayoutProps) {
 
           <div className="h-1 w-1 rounded-full bg-neutral-500" />
 
-          <div className="text-xs text-neutral-500">
-            {article.readTime}
-          </div>
+          <div className="text-xs text-neutral-500">{article.readTime}</div>
         </div>
 
         {/* TEXT */}
-        <div className="max-w-3xl mt-10">
-          <h1 className="max-w-3xl text-[clamp(3.1rem,4.2vw,4.6rem)] font-semibold leading-[0.96] tracking-[-0.04em] text-neutral-100">
+        <div className="mt-24 max-w-3xl">
+          <h1 className="max-w-3xl text-[clamp(2.6rem,3.6vw,3.8rem)] font-semibold leading-[0.96] tracking-[-0.04em] text-neutral-100">
             {article.title}
           </h1>
 
           <p className="mt-7 max-w-2xl text-[clamp(1.25rem,1.55vw,1.65rem)] leading-relaxed text-neutral-300">
             {article.dek}
           </p>
+
+          <Link
+            href="/"
+            className="mt-12 inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-neutral-100 backdrop-blur-sm transition hover:bg-white/15 hover:border-white/30"
+          >
+            ← Back to ShadowMonitor
+          </Link>
         </div>
       </div>
     </div>
   )
 }
 
-export default function ArticleLayout({ article }: ArticleLayoutProps) {
+export default function ArticleLayout({
+  article,
+  pairedArticle,
+  relatedArticles,
+}: ArticleLayoutProps) {
   const [activeSection, setActiveSection] = useState('intro')
 
   return (
@@ -200,7 +212,7 @@ export default function ArticleLayout({ article }: ArticleLayoutProps) {
         </section>
 
         {/* CONTENT */}
-        <div className="mx-auto grid max-w-7xl grid-cols-12 gap-12 px-6 pt-4 pb-12 lg:pt-6 lg:pb-16">
+        <div className="mx-auto grid max-w-7xl grid-cols-12 gap-12 px-6 pb-12 pt-4 lg:pb-16 lg:pt-6">
           {/* ARTICLE */}
           <main className="col-span-12 lg:col-span-8">
             <div className="max-w-3xl rounded-2xl bg-[#f5f2ea] px-8 py-10 text-neutral-900 shadow-[0_0_40px_rgba(0,0,0,0.28)] sm:px-12 sm:py-14 lg:px-16 lg:py-16">
@@ -218,18 +230,29 @@ export default function ArticleLayout({ article }: ArticleLayoutProps) {
 
                   <div className="space-y-6">
                     {section.blocks.map((block, index) => (
-                      <div key={`${section.id}-${index}`}>{renderBlock(block)}</div>
+                      <div key={`${section.id}-${index}`}>
+                        {renderBlock(block)}
+                      </div>
                     ))}
                   </div>
                 </Section>
               ))}
-<div className="mb-10 rounded-lg bg-red-500 p-4 text-white">
-  {article.title}
-</div>
-              <TimelineBlock items={article.timeline} />
-              <ConnectedInvestigations
-                investigations={article.connectedInvestigations}
+
+              <PairedInvestigation
+                article={pairedArticle}
+                slug={article.pairedInvestigationSlug}
               />
+
+              <ConnectedInvestigations
+  relatedArticles={relatedArticles ?? []}
+/>
+
+              <a
+                href="/"
+                className="mt-12 inline-flex w-fit items-center gap-2 rounded-full bg-neutral-900 px-5 py-3 text-lg font-medium text-neutral-100 shadow-sm transition hover:bg-neutral-800"
+              >
+                ← All Investigations
+              </a>
             </div>
           </main>
 
