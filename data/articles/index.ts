@@ -3,11 +3,11 @@ import { curacaoArticle } from './curacao'
 import { iranArticle } from './iran'
 import type { Article } from './shared'
 
-export const articleMap = {
-  anjouan: { ...anjouanArticle, themes: anjouanArticle.themes ?? ['igaming'] },
+export const articleMap: Record<string, Article> = {
+  anjouan: anjouanArticle,
   curacao: curacaoArticle,
   iran: iranArticle,
-} as const satisfies Record<string, Article>
+}
 
 export type ArticleSlug = keyof typeof articleMap
 
