@@ -1,5 +1,5 @@
 import {
-  type Article,
+  type InvestigationArticle,
   type ArticleSection,
   type TimelineItem,
   type SourceItem,
@@ -8,7 +8,7 @@ import {
   p,
   callout,
 } from './shared'
-export const curacaoArticle: Article = {
+export const curacaoArticle: InvestigationArticle = {
   eyebrow: 'Investigations',
   published: 'May 2026',
   publishedAt: '2026-05-02',

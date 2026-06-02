@@ -1,9 +1,9 @@
 import { anjouanArticle } from './anjouan'
 import { curacaoArticle } from './curacao'
 import { iranArticle } from './iran'
-import type { Article } from './shared'
+import type { InvestigationArticle} from './shared'
 
-export const articleMap: Record<string, Article> = {
+export const articleMap: Record<string, InvestigationArticle> = {
   anjouan: anjouanArticle,
   curacao: curacaoArticle,
   iran: iranArticle,
@@ -13,7 +13,7 @@ export type ArticleSlug = keyof typeof articleMap
 
 export type ArticleEntry = {
   slug: ArticleSlug
-  article: Article
+  article: InvestigationArticle
 }
 
 export const allArticles: ArticleEntry[] = Object.entries(articleMap).map(

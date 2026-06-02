@@ -1,5 +1,5 @@
 import {
-  type Article,
+  type InvestigationArticle,
   type ArticleSection,
   type TimelineItem,
   type SourceItem,
@@ -8,9 +8,11 @@ import {
   callout,
 } from './shared'
 
-export const anjouanArticle: Article = {
+export const anjouanArticle: InvestigationArticle = {
   eyebrow: 'Investigations',
   published: 'May 2026',
+  publishedAt: '2026-05-01',
+themes: ['igaming'],
   readTime: '12 min read',
   title: 'Anjouan: Inside the Offshore Licensing Machine',
   dek: 'How a tiny island in the Comoros became one of the world’s most efficient licensing hubs for high-risk gambling operators.',

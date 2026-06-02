@@ -1,5 +1,5 @@
 import {
-  type Article,
+  type InvestigationArticle,
   type ArticleSection,
   type TimelineItem,
   type SourceItem,
@@ -8,7 +8,7 @@ import {
   callout,
 } from './shared'
 
-export const iranArticle = {
+export const iranArticle: InvestigationArticle = {
   eyebrow: 'Investigations',
   published: 'May 2026',
   publishedAt: '2026-05-03',
@@ -338,4 +338,4 @@ sidebarBySection: {
       entities: ['armeniaCorridor', 'softConstruct', 'betConstruct'],
     },
   ] satisfies ConnectedInvestigation[],
-} satisfies Article
+} satisfies InvestigationArticle

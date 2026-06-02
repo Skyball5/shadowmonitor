@@ -17,6 +17,8 @@ export type EntityRefId =
   | 'smallhouse'
   | 'usoftgaming'
 
+export type ThemeKey = 'igaming' | 'crypto' | 'dark-payments'
+
 export type InlinePart =
   | string
   | {
@@ -94,9 +96,10 @@ export const callout = (
   text,
 })
 
-export type Article = {
+export type InvestigationArticle = {
   eyebrow: string
   published: string
+  publishedAt: string
   readTime: string
   title: string
   dek: string
@@ -109,4 +112,6 @@ export type Article = {
   sidebarBySection?: SidebarSectionMap
   connectedInvestigations: ConnectedInvestigation[]
   pairedInvestigationSlug?: string
+  themes: ThemeKey[]
+  relatedOverride?: string[]
 }
