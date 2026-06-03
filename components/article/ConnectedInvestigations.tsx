@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import type { ArticleEntry } from '@/data/articles'
 
-
 const themeLabels = {
   igaming: 'iGaming',
   crypto: 'Crypto',
@@ -32,67 +31,39 @@ export default function ConnectedInvestigations({
       </div>
 
       <div className="space-y-5">
-        {relatedArticles.map((entry) => (
-          <Link
-            key={entry.slug}
-            href={`/investigations/${entry.slug}`}
-            className="
-              group
-              block
-              border-l border-neutral-300
-              pl-5 py-0.5
-              transition
-              hover:border-neutral-500
-            "
-          >
-            <div className="mb-1.5 text-[19px] leading-snug text-neutral-900 transition group-hover:text-black">
-              {entry.article.title}
-            </div>
+        {relatedArticles.map((entry) => {
+          const articleThemes = (entry.article as { themes?: ThemeKey[] }).themes ?? []
 
-            <div className="mb-3 max-w-2xl text-[15px] leading-6 text-neutral-700">
-              {entry.article.dek}
-            </div>
+          return (
+            <Link
+              key={entry.slug}
+              href={`/investigations/${entry.slug}`}
+              className="
+                group
+                block
+                border-l border-neutral-300
+                pl-5 py-0.5
+                transition
+                hover:border-neutral-500
+              "
+            >
+              <div className="mb-1.5 text-[19px] leading-snug text-neutral-900 transition group-hover:text-black">
+                {entry.article.title}
+              </div>
 
-            <div className="flex flex-wrap gap-2 text-[12px] text-neutral-500">
-              <span className="uppercase tracking-[0.12em] text-neutral-400">
-                Themes
-              </span>
-              {relatedArticles.map((entry) => {
-  const articleThemes = (entry.article as { themes?: ThemeKey[] }).themes ?? []
+              <div className="mb-3 max-w-2xl text-[15px] leading-6 text-neutral-700">
+                {entry.article.dek}
+              </div>
 
-  return (
-    <Link
-      key={entry.slug}
-      href={`/investigations/${entry.slug}`}
-      className="
-        group
-        block
-        border-l border-neutral-300
-        pl-5 py-0.5
-        transition
-        hover:border-neutral-500
-      "
-    >
-      <div className="mb-1.5 text-[19px] leading-snug text-neutral-900 transition group-hover:text-black">
-        {entry.article.title}
-      </div>
-
-      <div className="mb-3 max-w-2xl text-[15px] leading-6 text-neutral-700">
-        {entry.article.dek}
-      </div>
-
-      <div className="flex flex-wrap gap-2 text-[12px] text-neutral-500">
-        <span className="uppercase tracking-[0.12em] text-neutral-400">
-          Themes
-        </span>
-        <span>{articleThemes.map((theme) => themeLabels[theme]).join(', ')}</span>
-      </div>
-    </Link>
-  )
-})}
-            </div>
-          </Link>
-        ))}
+              <div className="flex flex-wrap gap-2 text-[12px] text-neutral-500">
+                <span className="uppercase tracking-[0.12em] text-neutral-400">
+                  Themes
+                </span>
+                <span>{articleThemes.map((theme) => themeLabels[theme]).join(', ')}</span>
+              </div>
+            </Link>
+          )
+        })}
       </div>
     </div>
   )

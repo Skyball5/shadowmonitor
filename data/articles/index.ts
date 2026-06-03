@@ -27,39 +27,42 @@ export function getRelatedArticles(
   currentSlug: ArticleSlug
 ): ArticleEntry[] {
   const current = articleMap[currentSlug]
-  
   const currentThemes = current.themes ?? []
+
+  const excludedSlugs = new Set(
+    [currentSlug, current.pairedInvestigationSlug].filter(Boolean) as string[]
+  )
 
   if (current.relatedOverride?.length) {
     return current.relatedOverride
       .map((slug) => allArticles.find((entry) => entry.slug === slug))
       .filter((entry): entry is ArticleEntry => Boolean(entry))
+      .filter((entry) => !excludedSlugs.has(entry.slug))
       .slice(0, 3)
   }
 
   const related = allArticles
-  .filter((entry) => entry.slug !== currentSlug)
-  .filter((entry) => {
-    const entryThemes = entry.article.themes ?? []
-    return entryThemes.some((theme) => currentThemes.includes(theme))
-  })
-  .sort((a, b) => {
-    const aThemes = a.article.themes ?? []
-    const bThemes = b.article.themes ?? []
+    .filter((entry) => !excludedSlugs.has(entry.slug))
+    .filter((entry) => {
+      const entryThemes = entry.article.themes ?? []
+      return entryThemes.some((theme) => currentThemes.includes(theme))
+    })
+    .sort((a, b) => {
+      const aThemes = a.article.themes ?? []
+      const bThemes = b.article.themes ?? []
 
-    const sharedA = aThemes.filter((theme) => currentThemes.includes(theme)).length
-    const sharedB = bThemes.filter((theme) => currentThemes.includes(theme)).length
+      const sharedA = aThemes.filter((theme) => currentThemes.includes(theme)).length
+      const sharedB = bThemes.filter((theme) => currentThemes.includes(theme)).length
 
-    if (sharedA !== sharedB) {
-      return sharedB - sharedA
-    }
+      if (sharedA !== sharedB) {
+        return sharedB - sharedA
+      }
 
-    const aDate = a.article.publishedAt ?? ''
-    const bDate = b.article.publishedAt ?? ''
+      const aDate = a.article.publishedAt ?? ''
+      const bDate = b.article.publishedAt ?? ''
 
-    return bDate.localeCompare(aDate)
-  })
+      return bDate.localeCompare(aDate)
+    })
 
-
-return related.slice(0, 3)
+  return related.slice(0, 3)
 }

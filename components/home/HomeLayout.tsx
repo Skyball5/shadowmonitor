@@ -271,9 +271,9 @@ function FeedCard({
       : '#'
 
   return (
-    <article className="grid gap-4 rounded-[22px] border border-white/10 bg-black/20 p-4 md:grid-cols-[200px_minmax(0,1fr)]">
+    <article className="grid gap-4 rounded-[22px] bg-black/20 p-4 md:grid-cols-[200px_minmax(0,1fr)]">
       <div
-        className={`overflow-hidden rounded-[18px] border border-white/10 bg-gradient-to-br ${item.tone}`}
+        className={`overflow-hidden rounded-[18px] bg-gradient-to-br ${item.tone}`}
       >
         {item.image ? (
           <img src={item.image} alt={item.title} className="h-[150px] w-full object-cover" />
@@ -324,9 +324,9 @@ export default function HomeLayout() {
         </div>
 
         <section
-          id="latest"
-          className="mt-4 rounded-[24px] border border-white/10 bg-white/[0.03] p-4 sm:p-5"
-        >
+  id="latest"
+  className="mt-4 rounded-[24px] bg-white/[0.03] p-4 sm:p-5"
+>
           <div className="flex items-center justify-between gap-4">
             <p className="text-xs uppercase tracking-[0.38em] text-[#86a65b]">
               Latest investigations
@@ -335,27 +335,19 @@ export default function HomeLayout() {
             <span className="text-xs text-white/35">View all</span>
           </div>
 
-          <div className="mt-4 space-y-4">
-            {feedItems.map((item) => (
-              <FeedCard key={item.title} item={item} />
-            ))}
-          </div>
+          <div className="mt-4">
+  {feedItems.map((item, index) => (
+    <div
+      key={item.title}
+      className={index === 0 ? '' : 'border-t border-white/10 pt-4 mt-4'}
+    >
+      <FeedCard item={item} />
+    </div>
+  ))}
+</div>
         </section>
 
-        <footer className="mt-4 rounded-[24px] border border-white/10 bg-white/[0.03] p-5 text-[13px] text-white/40">
-          <div className="grid gap-8 lg:grid-cols-[1.15fr_1fr_1fr_1fr]">
-            <div>
-              <p className="text-[30px] font-semibold leading-none tracking-[-0.06em] text-white/85">
-                <span>shadow</span>
-                <span className="text-[#86a65b]">monitor</span>
-              </p>
-
-              <p className="mt-4 max-w-sm leading-7">
-                Investigating the grey zones of finance. Exposing risk. Promoting transparency.
-              </p>
-            </div>
-          </div>
-        </footer>
+        
       </div>
     </main>
   )
