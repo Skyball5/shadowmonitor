@@ -115,3 +115,4 @@ export type InvestigationArticle = {
   themes: ThemeKey[]
   relatedOverride?: string[]
 }
+export type Article = InvestigationArticle
