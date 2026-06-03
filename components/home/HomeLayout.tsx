@@ -50,8 +50,6 @@ const jurisdictions = [
   ['MLT', 'Medium risk · Gaming'],
   ['GIB', 'High risk · Compliance'],
   ['IOM', 'Medium risk · Licensing'],
-  ['UK', 'High risk · Service firms'],
-  ['US', 'High risk · Payment routing'],
 ]
 
 const topics = ['Investigations', 'iGaming', 'Crypto', 'Fintech', 'Offshore']
@@ -65,52 +63,38 @@ const navigation = [
 
 function HomepageHeroBanner() {
   return (
-    <section className="relative overflow-hidden rounded-[34px] bg-black">
+    <section className="relative overflow-hidden rounded-[30px] bg-black">
       {/* NAV */}
-      <div className="relative z-20 flex items-center justify-between border-b border-[#151815] px-6 py-5">
-        <div className="flex items-center gap-4">
-          <div className="flex h-10 w-10 items-center justify-center rounded-md border border-[#2a2d2a] bg-[#0a0c0a] text-sm font-medium text-[#d7d7d7]">
-            sm
-          </div>
+<div className="relative z-20 flex min-h-[88px] items-center justify-between border-b border-[#151815] px-5 sm:px-6">
+  <div className="flex items-center">
+    <div className="flex h-16 w-16 items-center justify-center rounded-xl border border-[#2a2d2a] bg-[#0a0c0a] font-sans">
+      <span className="text-[1.2rem] font-semibold leading-none tracking-[-0.06em] text-white">
+        s
+      </span>
+      <span className="text-[1.2rem] font-semibold leading-none tracking-[-0.06em] text-[#86a65b]">
+        m
+      </span>
+    </div>
+  </div>
 
-          <div className="text-[2rem] font-semibold tracking-[-0.05em] text-white">
-            shadow<span className="text-[#86a65b]">monitor</span>
-          </div>
-        </div>
-
-        <nav className="hidden items-center gap-10 text-sm text-[#a7aaa7] lg:flex">
-          {navigation.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className="transition hover:text-white"
-            >
-              {item.label}
-            </a>
-          ))}
-        </nav>
-
-        <div className="flex items-center gap-3">
-          <button className="rounded-lg border border-[#2a2d2a] px-4 py-2 text-sm text-[#d8d8d8] transition hover:border-[#3d433d] hover:text-white">
-            Secure tip
-          </button>
-
-          <button className="rounded-lg bg-[#9fbe63] px-4 py-2 text-sm font-medium text-black transition hover:bg-[#b1d26d]">
-            Subscribe
-          </button>
-        </div>
-      </div>
-
-      {/* HERO */}
-      <div className="grid grid-cols-12 gap-8 px-6 pb-4 pt-10 lg:items-start">
+  <div className="flex items-center gap-2 sm:gap-3">
+    <Link
+      href="/secure-tip"
+      className="inline-flex rounded-lg border border-[#2a2d2a] px-3 py-2 text-xs text-[#d8d8d8] transition hover:border-[#3d433d] hover:text-white sm:px-4 sm:text-sm"
+    >
+      Secure tip
+    </Link>
+  </div>
+</div>     {/* HERO */}
+      <div className="grid grid-cols-12 gap-6 px-5 pb-5 pt-8 sm:px-6 sm:pt-10 lg:items-start">
         {/* LEFT */}
-        <div className="relative z-30 col-span-12 lg:col-span-4 lg:pr-4">
+        <div className="relative z-30 col-span-12 lg:col-span-4 lg:pr-2">
           <div className="max-w-[560px]">
-            <h1 className="relative z-40 text-[clamp(3.6rem,5.6vw,5.7rem)] font-semibold leading-[0.88] tracking-[-0.07em] text-white">
+            <h1 className="relative z-40 text-[clamp(2.7rem,4.2vw,4.8rem)] font-semibold leading-[0.92] tracking-[-0.07em] text-white">
               shadow<span className="text-[#86a65b]">monitor</span>
             </h1>
 
-            <div className="mt-8 flex flex-wrap items-center gap-4 text-[0.72rem] uppercase tracking-[0.38em] text-[#8d938d]">
+            <div className="mt-6 flex flex-wrap items-center gap-3 text-[0.68rem] uppercase tracking-[0.36em] text-[#8d938d] sm:mt-8 sm:text-[0.72rem] sm:tracking-[0.38em]">
               <span>Independent</span>
               <span>•</span>
               <span>Investigative</span>
@@ -118,80 +102,68 @@ function HomepageHeroBanner() {
               <span>Intelligence</span>
             </div>
 
-            <p className="mt-12 max-w-[520px] text-[2rem] italic leading-[1.45] tracking-[-0.03em] text-[#d8d8d8]">
-              Exposing the hidden structures and power behind the grey zone economies.
+            <p className="mt-8 max-w-[520px] text-[1.35rem] italic leading-[1.42] tracking-[-0.03em] text-[#d8d8d8] sm:mt-10 sm:text-[1.55rem] lg:text-[1.7rem]">
+              Exposing the hidden structures and power behind the grey zone
+              economies.
             </p>
 
-            <div className="mt-14 flex items-center gap-4">
-              <button className="rounded-xl bg-[#9fbe63] px-7 py-4 text-sm font-medium text-black transition hover:bg-[#b1d26d]">
-                Subscribe
-              </button>
+            <div className="mt-10 flex flex-wrap items-center gap-3 sm:mt-12 sm:gap-4">
+              <Link
+  href="/subscribe"
+  className="inline-flex rounded-xl bg-[#9fbe63] px-5 py-3.5 text-sm font-medium text-black transition hover:bg-[#b1d26d] sm:px-7 sm:py-4"
+>
+  Subscribe
+</Link>
 
-              <button className="rounded-xl px-7 py-4 text-sm text-[#d5d5d5] transition hover:border-[#404640] hover:text-white">
-                Read more
-              </button>
             </div>
           </div>
         </div>
 
         {/* MAP */}
-        <div className="col-span-12 lg:col-span-5">
-          <div className="relative h-[360px] overflow-hidden lg:h-[420px]">
-            <img
-              src="/main/heromain-map.png"
-              alt="ShadowMonitor intelligence map"
-              className="h-full w-full object-cover"
-              style={{ objectPosition: '58% 50%' }}
-            />
+<div className="col-span-12 lg:col-span-5">
+  <div className="relative h-[280px] overflow-hidden rounded-[24px] sm:h-[320px] lg:h-[380px]">
+    <img
+      src="/main/heromain-map.png"
+      alt="ShadowMonitor intelligence map"
+      className="h-full w-full object-cover"
+      style={{
+        objectPosition: '44% 50%',
+        transform: 'scale(0.95)',
+        transformOrigin: 'center center',
+      }}
+    />
 
-            <div className="absolute inset-y-0 left-0 w-[13%] bg-gradient-to-r from-[#050705] via-[#050705]/78 to-transparent" />
-          </div>
-        </div>
+    <div className="absolute inset-y-0 left-0 w-[10%] bg-gradient-to-r from-[#050705] via-[#050705]/65 to-transparent" />
+    <div className="absolute inset-y-0 right-0 w-[6%] bg-gradient-to-l from-[#050705] via-[#050705]/25 to-transparent" />
+  </div>
+</div>
 
         {/* RIGHT PANEL */}
-        <aside className="col-span-12 lg:absolute lg:right-6 lg:top-20 lg:z-30 lg:w-[340px]">
-          <div className="rounded-[28px] bg-[rgba(5,7,5,0.82)] p-6 backdrop-blur-sm">
-            <div className="text-[2rem] font-semibold tracking-[-0.05em] text-[#9fbe63]">
-              APRIL 2026
-            </div>
+<aside className="col-span-12 lg:col-span-3">
+  <div className="rounded-[24px] bg-[rgba(5,7,5,0.82)] p-3.5 backdrop-blur-sm sm:p-4">
+    <div className="text-[1.2rem] font-semibold tracking-[-0.05em] text-[#9fbe63] sm:text-[1.35rem]">
+      MAY 2026
+    </div>
 
-            <div className="mt-8 text-[0.78rem] uppercase tracking-[0.34em] text-[#9ca19c]">
-              Jurisdictions in focus
-            </div>
+    <div className="mt-4 text-[0.62rem] uppercase tracking-[0.28em] text-[#9ca19c] sm:text-[0.68rem]">
+      Jurisdictions in focus
+    </div>
 
-            <div className="mt-8 grid grid-cols-2 gap-x-8 gap-y-6">
-              {jurisdictions.map(([code, label]) => (
-                <div key={code}>
-                  <div className="text-[2rem] font-medium tracking-[-0.04em] text-white">
-                    {code}
-                  </div>
-
-                  <div className="mt-2 text-sm leading-relaxed text-[#7d837d]">
-                    {label}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-10 border-t border-[#1f231f]" />
-
-            <div className="mt-10 text-[0.78rem] uppercase tracking-[0.34em] text-[#9ca19c]">
-              Topics
-            </div>
-
-            <div className="mt-8 space-y-2">
-              {topics.map((topic) => (
-                <div
-                  key={topic}
-                  className="flex items-center justify-between text-[1.15rem] text-[#d4d4d4]"
-                >
-                  <span>{topic}</span>
-                  <span className="text-[#86a65b]">›</span>
-                </div>
-              ))}
-            </div>
+    <div className="mt-4 grid grid-cols-2 gap-x-5 gap-y-4 sm:mt-5 sm:gap-x-6 sm:gap-y-4">
+      {jurisdictions.map(([code, label]) => (
+        <div key={code}>
+          <div className="text-[1.45rem] font-medium tracking-[-0.04em] text-white sm:text-[1.55rem]">
+            {code}
           </div>
-        </aside>
+
+          <div className="mt-1 text-[0.75rem] leading-snug text-[#7d837d] sm:text-[0.8rem] sm:leading-relaxed">
+            {label}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</aside>
       </div>
     </section>
   )
@@ -199,52 +171,58 @@ function HomepageHeroBanner() {
 
 function HomepageFeaturedInvestigation() {
   return (
-    <article className="overflow-hidden rounded-[30px] bg-neutral-950">
-      <div className="relative min-h-[500px] px-8 py-8 sm:px-10 lg:px-12">
-        <div className="relative z-30 flex min-h-[460px] flex-col lg:w-[60%] lg:pr-8">
-          <div className="flex flex-wrap items-center gap-3">
-            <div className="text-xs uppercase tracking-[0.18em] text-neutral-500">
+    <article className="overflow-hidden rounded-[28px] bg-neutral-950">
+      <div className="relative px-5 py-5 sm:px-6 sm:py-6 lg:min-h-[360px] lg:px-9 lg:py-9">
+        <div className="relative z-30 flex flex-col lg:w-[60%] lg:pr-8">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+            <div className="text-[0.68rem] uppercase tracking-[0.18em] text-neutral-500 sm:text-xs">
               Featured investigation
             </div>
 
             <div className="h-1 w-1 rounded-full bg-neutral-500" />
 
-            <div className="text-xs text-neutral-500">Published Nov 18, 2024</div>
+            <div className="text-[0.68rem] text-neutral-500 sm:text-xs">
+              Published Nov 18, 2024
+            </div>
 
             <div className="h-1 w-1 rounded-full bg-neutral-500" />
 
-            <div className="text-xs text-neutral-500">7 min read</div>
+            <div className="text-[0.68rem] text-neutral-500 sm:text-xs">
+              7 min read
+            </div>
           </div>
 
-          <div className="mt-10 max-w-3xl">
-            <h1 className="max-w-3xl text-[clamp(1.9rem,2.85vw,3.3rem)] font-semibold leading-[0.94] tracking-[-0.04em] text-neutral-100">
-              Curaçao Is Losing Operators. The Reform Is Only Part of the Story
-            </h1>
+          <div className="mt-6 max-w-3xl sm:mt-7">
+  <Link href="/investigations/curacao" className="block group">
+    <h1 className="max-w-3xl text-[clamp(1.55rem,2.1vw,2.55rem)] font-semibold leading-[0.95] tracking-[-0.04em] text-neutral-100 transition group-hover:text-[#9fbe63] sm:text-[clamp(1.7rem,2.3vw,2.8rem)]">
+      Curaçao Is Losing Operators. The Reform Is Only Part of the Story
+    </h1>
+  </Link>
 
-            <p className="mt-7 max-w-2xl text-[clamp(1.1rem,1.35vw,1.45rem)] leading-relaxed text-neutral-300">
-              New documents reveal how a payment processor operated for years under the radar —
-              until it couldn’t.
-            </p>
-          </div>
+  <p className="mt-4 max-w-2xl text-[clamp(0.95rem,1.05vw,1.1rem)] leading-relaxed text-neutral-300 sm:mt-5">
+    New documents reveal how a payment processor operated for years under the radar —
+    until it couldn’t.
+  </p>
+</div>
 
-          <div className="mt-8 lg:hidden">
-            <div className="relative h-[320px] overflow-hidden rounded-[26px]">
+          <div className="mt-6 lg:hidden">
+            <div className="relative h-[240px] overflow-hidden rounded-[22px] sm:h-[280px]">
               <img
                 src="/investigations/curacao-dossier.png"
                 alt="Procedural investigation artwork for Curaçao bankruptcy article"
                 className="h-full w-full object-cover"
-                style={{ objectPosition: '90% 46%' }}
+                style={{ objectPosition: '88% 46%' }}
               />
 
-              <div className="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-950/28 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-950/24 to-transparent" />
             </div>
           </div>
 
-          <div className="mt-auto flex flex-wrap gap-2 pt-10 lg:pt-14">
+          <div className="mt-7 flex flex-wrap gap-2 sm:mt-9">
             {featuredTags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-white/55"
+                className="rounded-full bg-white/5 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-white/55 sm:text-[11px]"
               >
                 {tag}
               </span>
@@ -252,18 +230,19 @@ function HomepageFeaturedInvestigation() {
           </div>
         </div>
 
-        <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[60%] overflow-hidden rounded-r-[30px] lg:block">
+        <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[44%] overflow-hidden rounded-r-[28px] lg:block">
           <img
             src="/investigations/curacao-dossier.png"
             alt="Procedural investigation artwork for Curaçao bankruptcy article"
             className="h-full w-full object-cover"
             style={{
-              transform: 'translateX(-8%) scale(0.97)',
+              transform: 'translateX(-2%) scale(0.82)',
               transformOrigin: 'center center',
+              objectPosition: '92% 46%',
             }}
           />
 
-          <div className="absolute inset-y-0 left-0 w-[18%] bg-gradient-to-r from-neutral-950 via-neutral-950/20 to-transparent" />
+          <div className="absolute inset-y-0 left-0 w-[14%] bg-gradient-to-r from-neutral-950 via-neutral-950/18 to-transparent" />
         </div>
       </div>
     </article>
@@ -287,17 +266,19 @@ function FeedCard({
   ? '/investigations/anjouan'
   : item.title.includes('Curaçao')
     ? '/investigations/curacao'
-    : '#'
+    : item.title.includes('Iran')
+      ? '/investigations/iran'
+      : '#'
 
   return (
-    <article className="grid gap-4 rounded-[22px] border border-white/10 bg-black/20 p-4 md:grid-cols-[260px_minmax(0,1fr)]">
+    <article className="grid gap-4 rounded-[22px] border border-white/10 bg-black/20 p-4 md:grid-cols-[200px_minmax(0,1fr)]">
       <div
         className={`overflow-hidden rounded-[18px] border border-white/10 bg-gradient-to-br ${item.tone}`}
       >
         {item.image ? (
-          <img src={item.image} alt={item.title} className="h-[190px] w-full object-cover" />
+          <img src={item.image} alt={item.title} className="h-[150px] w-full object-cover" />
         ) : (
-          <div className="h-[190px]" />
+          <div className="h-[150px]" />
         )}
       </div>
 
@@ -307,13 +288,13 @@ function FeedCard({
           <span className="text-xs text-white/35">{item.date}</span>
         </div>
 
-        <h2 className="mt-3 text-[28px] font-light leading-[1.08] tracking-[-0.025em] sm:text-[34px]">
+        <h2 className="mt-3 text-[22px] font-light leading-[1.08] tracking-[-0.025em] sm:text-[28px]">
           <Link href={href} className="transition hover:text-[#86a65b]">
             {item.title}
           </Link>
         </h2>
 
-        <p className="mt-3 max-w-3xl text-sm leading-7 text-white/60 sm:text-[15px]">
+        <p className="mt-3 max-w-3xl text-sm leading-7 text-white/60 sm:text-[14px]">
           {item.excerpt}
         </p>
 
@@ -338,7 +319,7 @@ export default function HomeLayout() {
       <div className="mx-auto max-w-[1600px] px-4 py-4 sm:px-6 sm:py-6">
         <HomepageHeroBanner />
 
-        <div className="mt-4">
+        <div className="mt-2">
           <HomepageFeaturedInvestigation />
         </div>
 
@@ -361,7 +342,7 @@ export default function HomeLayout() {
           </div>
         </section>
 
-        <footer className="mt-4 rounded-[24px] border border-white/10 bg-white/[0.03] p-5 text-sm text-white/40">
+        <footer className="mt-4 rounded-[24px] border border-white/10 bg-white/[0.03] p-5 text-[13px] text-white/40">
           <div className="grid gap-8 lg:grid-cols-[1.15fr_1fr_1fr_1fr]">
             <div>
               <p className="text-[30px] font-semibold leading-none tracking-[-0.06em] text-white/85">
