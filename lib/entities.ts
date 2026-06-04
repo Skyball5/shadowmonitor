@@ -672,4 +672,263 @@ miladHatemi: {
     'iran',
   ],
 },
+
+consumerProtection: {
+  id: 'consumerProtection',
+  name: 'Consumer Protection',
+  type: 'concept',
+
+  shortDescription:
+    'The legal principle used to protect consumers from unlawful or unfair market conduct.',
+
+  description:
+    'Consumer protection is the legal and regulatory framework that protects individuals acting as non-professional market participants. In gambling disputes, it is often the basis for recovery claims against operators who served players without proper authorization.',
+
+  status: 'Core legal principle',
+
+  aliases: ['Consumer protection'],
+  relatedEntities: ['crossBorderClaims', 'litigationFunding', 'forumShopping'],
+},
+
+crossBorderClaims: {
+  id: 'crossBorderClaims',
+  name: 'Cross-Border Claims',
+  type: 'concept',
+
+  shortDescription:
+    'Legal claims that move across jurisdictions through litigation and enforcement.',
+
+  description:
+    'Cross-border claims arise when legal disputes originate in one jurisdiction but are pursued, financed or enforced in another. In the gambling sector, this often means player-loss recovery claims moving from European courts to offshore insolvency systems.',
+
+  status: 'Expanding enforcement model',
+
+  aliases: ['Cross-border enforcement claims'],
+  relatedEntities: ['consumerProtection', 'forumShopping', 'enforcementStrategy'],
+},
+
+litigationFunding: {
+  id: 'litigationFunding',
+  name: 'Litigation Funding',
+  type: 'concept',
+
+  shortDescription:
+    'Third-party capital used to finance legal proceedings in exchange for a share of recovery.',
+
+  description:
+    'Litigation funding allows outside capital providers to finance lawsuits, appeals and enforcement efforts. In gambling-loss recovery cases, it can turn individual claims into professionally financed enforcement pipelines.',
+
+  status: 'Growing legal-finance sector',
+
+  aliases: ['Legal funding'],
+  relatedEntities: ['crossBorderClaims', 'claimAggregation', 'forumShopping'],
+},
+
+claimAggregation: {
+  id: 'claimAggregation',
+  name: 'Claim Aggregation',
+  type: 'concept',
+
+  shortDescription:
+    'The combination of multiple individual claims into a larger enforcement structure.',
+
+  description:
+    'Claim aggregation combines numerous player claims into a single legal or financial vehicle. This makes smaller losses more powerful by increasing leverage, scale and procedural pressure on operators.',
+
+  status: 'Common recovery tactic',
+
+  aliases: ['Aggregation'],
+  relatedEntities: ['litigationFunding', 'crossBorderClaims', 'enforcementStrategy'],
+},
+
+forumShopping: {
+  id: 'forumShopping',
+  name: 'Forum Shopping',
+  type: 'concept',
+
+  shortDescription:
+    'The strategic selection of jurisdictions offering the most favorable legal or enforcement outcome.',
+
+  description:
+    'Forum shopping refers to the practice of choosing the court system or jurisdiction most likely to produce a favorable result. In gambling claim enforcement, it often means moving from consumer courts to insolvency or bankruptcy venues with stronger leverage.',
+
+  status: 'Widely used legal strategy',
+
+  aliases: ['Jurisdiction shopping'],
+  relatedEntities: ['crossBorderClaims', 'enforcementStrategy', 'bankruptcyPetition'],
+},
+
+enforcementStrategy: {
+  id: 'enforcementStrategy',
+  name: 'Enforcement Strategy',
+  type: 'concept',
+
+  shortDescription:
+    'The broader legal and procedural method used to pressure a target into payment or settlement.',
+
+  description:
+    'Enforcement strategy describes the procedural path used to turn a claim into practical pressure. In gambling disputes, that can include judgments, insolvency filings, asset pressure and coordinated cross-border action.',
+
+  status: 'Active litigation concept',
+
+  aliases: ['Enforcement'],
+  relatedEntities: ['forumShopping', 'bankruptcyPetition', 'crossBorderClaims'],
+},
+
+bankruptcyPetition: {
+  id: 'bankruptcyPetition',
+  name: 'Bankruptcy Petition',
+  type: 'concept',
+
+  shortDescription:
+    'A formal request to place a company into bankruptcy or insolvency proceedings.',
+
+  description:
+    'A bankruptcy petition is a legal filing asking a court to declare a debtor insolvent. In gambling enforcement cases, it can function as a pressure mechanism even when the underlying dispute concerns a comparatively small claim.',
+
+  status: 'Core insolvency tool',
+
+  aliases: ['Insolvency petition'],
+  relatedEntities: ['enforcementStrategy', 'curacaoBankruptcyLaw', 'damaCase'],
+},
+
+damaCase: {
+  id: 'damaCase',
+  name: 'Dama Case',
+  type: 'concept',
+
+  shortDescription:
+    'The bankruptcy and enforcement dispute involving Dama N.V. in Curaçao.',
+
+  description:
+    'The Dama case became one of the clearest examples of how gambling-related claims could create real pressure through bankruptcy proceedings. It demonstrated the leverage effect of insolvency even when the case was later overturned or settled.',
+
+  status: 'Referenced case',
+
+  aliases: ['Dama'],
+  relatedEntities: ['dama', 'bankruptcyPetition', 'curacaoBankruptcyLaw'],
+},
+
+araxioCase: {
+  id: 'araxioCase',
+  name: 'Araxio Case',
+  type: 'concept',
+
+  shortDescription:
+    'The insolvency and recovery case involving Araxio Development N.V.',
+
+  description:
+    'The Araxio case showed the limits of using bankruptcy as an enforcement tool. Although claims and proceedings moved forward, the estate reportedly contained little meaningful value to distribute.',
+
+  status: 'Referenced case',
+
+  aliases: ['Araxio'],
+  relatedEntities: ['araxio', 'bankruptcyPetition', 'curacaoBankruptcyLaw'],
+},
+
+regulatoryArbitrage: {
+  id: 'regulatoryArbitrage',
+  name: 'Regulatory Arbitrage',
+  type: 'concept',
+
+  shortDescription:
+    'The use of legal differences between jurisdictions to reduce friction or increase leverage.',
+
+  description:
+    'Regulatory arbitrage occurs when businesses or claimants take advantage of differences between legal systems, licensing frameworks or insolvency rules. In gambling, it can shape both operator relocation and claim enforcement.',
+
+  status: 'Structural market behavior',
+
+  aliases: ['Arbitrage'],
+  relatedEntities: ['forumShopping', 'crossBorderClaims', 'enforcementStrategy'],
+},
+
+consumerVsEntrepreneur: {
+  id: 'consumerVsEntrepreneur',
+  name: 'Consumer vs Entrepreneur',
+  type: 'concept',
+
+  shortDescription:
+    'The legal distinction between a protected consumer and a knowledgeable market participant.',
+
+  description:
+    'This distinction is increasingly important in gambling refund litigation. Some courts now ask whether the claimant was a passive consumer entitled to protection or a participant who knowingly accepted the risks of offshore gambling.',
+
+  status: 'Emerging legal distinction',
+
+  aliases: ['Consumer versus entrepreneur'],
+  relatedEntities: ['consumerProtection', 'lgGiessen', 'crossBorderClaims'],
+},
+
+lgGiessen: {
+  id: 'lgGiessen',
+  name: 'LG Gießen',
+  type: 'organization',
+
+  shortDescription:
+    'A German regional court cited in gambling-loss recovery disputes.',
+
+  description:
+    'LG Gießen became notable in gambling-loss recovery litigation for decisions that reflected a more nuanced view of claimant awareness and consumer status. It is frequently cited in discussions of the consumer-versus-entrepreneur distinction.',
+
+  jurisdiction: 'Germany',
+  status: 'Regional court',
+
+  aliases: ['Landgericht Gießen'],
+  relatedEntities: ['consumerVsEntrepreneur', 'consumerProtection', 'crossBorderClaims'],
+},
+
+mga: {
+  id: 'mga',
+  name: 'Malta Gaming Authority',
+  type: 'regulator',
+
+  shortDescription:
+    'One of Europe’s largest gambling regulators.',
+
+  description:
+    'The Malta Gaming Authority is a major European gambling regulator whose licenses are widely recognized across the industry. In recovery litigation, MGA licensing does not necessarily prevent claims elsewhere if a market requires domestic authorization.',
+
+  jurisdiction: 'Malta',
+  status: 'Active regulator',
+
+  aliases: ['MGA'],
+  relatedEntities: ['consumerProtection', 'crossBorderClaims', 'regulatoryArbitrage'],
+},
+
+ksa: {
+  id: 'ksa',
+  name: 'Kansspelautoriteit',
+  type: 'regulator',
+
+  shortDescription:
+    'The Dutch Gambling Authority.',
+
+  description:
+    'The Kansspelautoriteit is the Dutch gambling regulator. Its licensing framework and enforcement posture are central to the Netherlands portion of the gambling claims debate.',
+
+  jurisdiction: 'Netherlands',
+  status: 'Active regulator',
+
+  aliases: ['KSA', 'Dutch Gambling Authority'],
+  relatedEntities: ['consumerVsEntrepreneur', 'crossBorderClaims', 'regulatoryArbitrage'],
+},
+
+curacaoBankruptcyLaw: {
+  id: 'curacaoBankruptcyLaw',
+  name: 'Curaçao Bankruptcy Law',
+  type: 'law',
+
+  shortDescription:
+    'The colonial-era insolvency framework still used in modern Curaçao gambling disputes.',
+
+  description:
+    'Curaçao Bankruptcy Law refers to the island’s long-standing insolvency framework, rooted in legislation from 1931. It remains central to modern gambling disputes because it can be used as an enforcement mechanism against operators with Curaçao-linked entities.',
+
+  jurisdiction: 'Curaçao',
+  status: 'Active legal framework',
+
+  aliases: ['Faillissementsbesluit 1931'],
+  relatedEntities: ['bankruptcyPetition', 'damaCase', 'araxioCase'],
+},
 }

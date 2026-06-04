@@ -17,9 +17,12 @@ export default function EntityTag({
   className = '',
 }: EntityTagProps) {
   const entity = entities[entityId]
-  const { openEntity } = useEntitySelection()
+const { openEntity } = useEntitySelection()
 
-  if (!entity) return null
+if (!entity) {
+  console.warn('[EntityTag missing]', entityId)
+  return null
+}
 
   const baseStyles =
     variant === 'article'

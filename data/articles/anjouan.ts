@@ -17,7 +17,7 @@ themes: ['igaming'],
   title: 'Anjouan: Inside the Offshore Licensing Machine',
   dek: 'How a tiny island in the Comoros became one of the world’s most efficient licensing hubs for high-risk gambling operators.',
   heroImage: '/investigations/anjouan-dossier.png',
-  pairedInvestigationSlug: 'curacao',
+  
   timelineAfterSectionId: 'intro',
 
   sections: [

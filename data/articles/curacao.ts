@@ -17,7 +17,7 @@ themes: ['igaming'],
   title: 'The Colonial Bankruptcy Law Driving Gambling Operators Out of Curaçao',
   dek: 'Regulatory reform may be reshaping Curaçao’s gambling system — but operators say the deeper risk lies elsewhere.',
   heroImage: '/investigations/curacao-dossier.png',
-  pairedInvestigationSlug: 'anjouan',
+  pairedInvestigationSlug: 'claims-industry',
   timelineAfterSectionId: 'intro',
   
   sidebarBySection: {

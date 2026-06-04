@@ -20,22 +20,7 @@ export default function Sidebar({
   
   const data = article?.sidebarBySection?.[activeSection]
 if (!data) return null
-console.log('SIDEBAR DEBUG', {
-  title: article?.title,
-  activeSection,
-  sidebarBySection: article?.sidebarBySection,
-  data: article?.sidebarBySection?.[activeSection],
-})
-console.log('SIDEBAR DEBUG', {
-  activeSection,
-  keys: Object.keys(article?.sidebarBySection ?? {}),
-  data: article?.sidebarBySection?.[activeSection],
-})
-console.log('SIDEBAR ENTITIES DEBUG', {
-  activeSection,
-  ids: data?.entities,
-  names: data?.entities?.map((id) => entities[id]?.name ?? `MISSING:${id}`),
-})
+
   return (
     <div className="sticky top-24 h-[calc(100vh-6rem)] flex flex-col gap-6 overflow-hidden">
       <motion.div
@@ -63,20 +48,20 @@ console.log('SIDEBAR ENTITIES DEBUG', {
         </div>
 
         <div className="space-y-4">
-          <div className="text-xs uppercase tracking-[0.18em] text-neutral-500">
-            Intelligence Layer
-          </div>
+  <div className="text-xs uppercase tracking-[0.18em] text-neutral-500">
+    Intelligence Layer
+  </div>
 
-          <div className="flex flex-wrap gap-2">
-            {data.entities.map((entityId) => (
-              <EntityTag
-                key={entityId}
-                entityId={entityId}
-                variant="sidebar"
-              />
-            ))}
-          </div>
-        </div>
+  <div className="flex flex-wrap gap-2">
+    {data.entities.map((entityId) => (
+      <EntityTag
+        key={entityId}
+        entityId={entityId}
+        variant="sidebar"
+      />
+    ))}
+  </div>
+</div>
       </motion.div>
 
       <div className="flex-1 min-h-0">

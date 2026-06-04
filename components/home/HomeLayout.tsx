@@ -5,16 +5,6 @@ const featuredTags = ['CURAÇAO', 'AML', 'SANCTIONS', 'PAYMENT PROCESSORS']
 const feedItems = [
   {
     type: 'Investigation',
-    date: 'Nov 18, 2024',
-    title: 'Anjouan: Inside the Offshore Licensing Machine',
-    excerpt:
-      'How the Union of the Comoros became one of the world’s most prolific issuers of online gambling licenses.',
-    image: '/investigations/anjouan-dossier.png',
-    tags: ['ANJOUAN', 'GAMBLING', 'OFFSHORE LICENSING'],
-    tone: 'from-[#0f1511] via-[#171b15] to-[#050505]',
-  },
-  {
-    type: 'Investigation',
     date: 'May 2026',
     title: 'Iran Built a Parallel Digital Economy Under Pressure',
     excerpt:
@@ -23,6 +13,29 @@ const feedItems = [
     tags: ['IRAN', 'TELEGRAM', 'CRYPTO'],
     tone: 'from-[#101613] via-[#151b15] to-[#050505]',
   },
+
+  {
+    type: 'Investigation',
+    date: 'May 2026',
+    title: "When Losing Becomes Optional: The Rise of Europe's Gambling Claim Industry",
+    excerpt:
+      'What began as consumer protection has evolved into a cross-border ecosystem of litigation, claim financing and gambling-loss recovery.',
+    image: '/investigations/curacao-dossier.png',
+    tags: ['CLAIMS', 'LITIGATION', 'EUROPE'],
+    tone: 'from-[#111311] via-[#171915] to-[#050505]',
+  },
+
+  {
+    type: 'Investigation',
+    date: 'May 2026',
+    title: 'Anjouan: Inside the Offshore Licensing Machine',
+    excerpt:
+      'How the Union of the Comoros became one of the world’s most prolific issuers of online gambling licenses.',
+    image: '/investigations/anjouan-dossier.png',
+    tags: ['ANJOUAN', 'GAMBLING', 'OFFSHORE LICENSING'],
+    tone: 'from-[#0f1511] via-[#171b15] to-[#050505]',
+  },
+
   {
     type: 'Analysis',
     date: 'Nov 29, 2024',
@@ -32,16 +45,6 @@ const feedItems = [
     image: null,
     tags: ['CYPRUS', 'REGULATION', 'HIGH RISK'],
     tone: 'from-[#131313] via-[#191919] to-[#080808]',
-  },
-  {
-    type: 'Investigation',
-    date: 'Nov 26, 2024',
-    title: 'The Broker Network Behind Latin America’s Betting Boom',
-    excerpt:
-      'An affiliate network built in Costa Rica is feeding millions into unregulated platforms.',
-    image: null,
-    tags: ['COSTA RICA', 'BETTING', 'AFFILIATES'],
-    tone: 'from-[#10110f] via-[#161616] to-[#070707]',
   },
 ]
 
@@ -215,7 +218,7 @@ function HomepageFeaturedInvestigation() {
               />
 
               <div className="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-950/24 to-transparent" />
-            </div>
+          4)  </div>
           </div>
 
           <div className="mt-7 flex flex-wrap gap-2 sm:mt-9">
@@ -268,19 +271,23 @@ function FeedCard({
     ? '/investigations/curacao'
     : item.title.includes('Iran')
       ? '/investigations/iran'
-      : '#'
+      : item.title.includes('When Losing Becomes Optional')
+        ? '/investigations/claims-industry'
+        : '#'
 
   return (
-    <article className="grid gap-4 rounded-[22px] bg-black/20 p-4 md:grid-cols-[200px_minmax(0,1fr)]">
-      <div
-        className={`overflow-hidden rounded-[18px] bg-gradient-to-br ${item.tone}`}
-      >
-        {item.image ? (
-          <img src={item.image} alt={item.title} className="h-[150px] w-full object-cover" />
-        ) : (
-          <div className="h-[150px]" />
-        )}
-      </div>
+    <article className="grid gap-4 rounded-[22px] bg-black/20 p-4 md:grid-cols-[minmax(0,240px)_minmax(0,1fr)] md:items-start">
+      <div className="aspect-[3/2.2] w-full overflow-hidden rounded-[18px] bg-gradient-to-br">
+  {item.image ? (
+    <img
+      src={item.image}
+      alt={item.title}
+      className="h-full w-full object-cover"
+    />
+  ) : (
+    <div className={`h-full w-full bg-gradient-to-br ${item.tone}`} />
+  )}
+</div>
 
       <div className="flex flex-col justify-center">
         <div className="flex flex-wrap items-center gap-x-3 gap-y-2">

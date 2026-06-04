@@ -2,8 +2,10 @@ import { anjouanArticle } from './anjouan'
 import { curacaoArticle } from './curacao'
 import { iranArticle } from './iran'
 import type { InvestigationArticle} from './shared'
+import { claimsIndustryArticle } from './claims-industry'
 
 export const articleMap: Record<string, InvestigationArticle> = {
+  'claims-industry': claimsIndustryArticle,
   anjouan: anjouanArticle,
   curacao: curacaoArticle,
   iran: iranArticle,

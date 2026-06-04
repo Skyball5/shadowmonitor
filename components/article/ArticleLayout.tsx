@@ -90,16 +90,27 @@ function renderInlineParts(parts: InlinePart[]): ReactNode[] {
     }
 
     const entity = entities[part.id]
-    const label = entity.aliases?.[0] ?? entity.name
 
-    nodes.push(
-      <EntityTag
-        key={`${part.id}-${index}`}
-        entityId={part.id}
-        variant="article"
-        label={label}
-      />
-    )
+if (!entity) {
+  console.warn('[ArticleLayout missing entity]', part.id)
+  nodes.push(
+    <span key={`${part.id}-${index}`} className="text-red-600">
+      {part.id}
+    </span>
+  )
+  return
+}
+
+const label = entity.aliases?.[0] ?? entity.name ?? part.id
+
+nodes.push(
+  <EntityTag
+    key={`${part.id}-${index}`}
+    entityId={part.id}
+    variant="article"
+    label={label}
+  />
+)
   })
 
   return nodes
