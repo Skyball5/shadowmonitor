@@ -223,7 +223,7 @@ export default function ArticleLayout({
 </section>
 
         {/* CONTENT */}
-        <div className="mx-auto grid max-w-7xl grid-cols-12 gap-12 px-6 pb-12 pt-4 lg:pb-16 lg:pt-6">
+        <div className="mx-auto px-6 pb-12 pt-4 lg:grid lg:max-w-7xl lg:grid-cols-12 lg:gap-12 lg:pb-16 lg:pt-6">
           {/* ARTICLE */}
           <main className="col-span-12 lg:col-span-8">
             <div className="max-w-3xl rounded-2xl bg-[#f5f2ea] px-8 py-10 text-neutral-900 shadow-[0_0_40px_rgba(0,0,0,0.28)] sm:px-12 sm:py-14 lg:px-16 lg:py-16">
