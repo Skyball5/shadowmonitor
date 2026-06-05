@@ -5,7 +5,7 @@ const featuredTags = ['CURAÇAO', 'AML', 'SANCTIONS', 'PAYMENT PROCESSORS']
 const feedItems = [
   {
     type: 'Investigation',
-    date: 'May 2026',
+    date: 'Junt 2026',
     title: 'Iran Built a Parallel Digital Economy Under Pressure',
     excerpt:
       'Persian betting platforms became part of a wider bypass infrastructure built around Telegram, crypto settlement and sanctions-era survival networks.',
@@ -16,11 +16,11 @@ const feedItems = [
 
   {
     type: 'Investigation',
-    date: 'May 2026',
+    date: 'June 2026',
     title: "When Losing Becomes Optional: The Rise of Europe's Gambling Claim Industry",
     excerpt:
       'What began as consumer protection has evolved into a cross-border ecosystem of litigation, claim financing and gambling-loss recovery.',
-    image: '/investigations/curacao-dossier.png',
+    image: '/investigations/claims-industry-dossier.png',
     tags: ['CLAIMS', 'LITIGATION', 'EUROPE'],
     tone: 'from-[#111311] via-[#171915] to-[#050505]',
   },
@@ -36,23 +36,23 @@ const feedItems = [
     tone: 'from-[#0f1511] via-[#171b15] to-[#050505]',
   },
 
-  {
+    {
     type: 'Analysis',
-    date: 'Nov 29, 2024',
-    title: 'Cyprus: The Silent Gateway for High-Risk Entities',
+    date: 'May 2026',
+    title: "The Market for Tomorrow's Secrets",
     excerpt:
-      'Why Cyprus continues to attract high-risk businesses despite repeated regulatory promises.',
-    image: null,
-    tags: ['CYPRUS', 'REGULATION', 'HIGH RISK'],
-    tone: 'from-[#131313] via-[#191919] to-[#080808]',
+      'Prediction markets are turning information about future events into a tradable asset — creating new forms of insider trading, media influence and regulatory conflict.',
+    image: '/investigations/prediction-market-dossier.png',
+    tags: ['PREDICTION', 'MARKETS', 'INTELLIGENCE'],
+    tone: 'from-[#101214] via-[#16191d] to-[#050505]',
   },
 ]
 
 const jurisdictions = [
-  ['CUR', 'High risk · Payment processors'],
-  ['MLT', 'Medium risk · Gaming'],
-  ['GIB', 'High risk · Compliance'],
-  ['IOM', 'Medium risk · Licensing'],
+  ['CUR', 'High risk · Bankruptcy Law'],
+  ['ANJ', 'Medium risk · iGaming'],
+  ['GER', 'Medium risk · Claims Industry'],
+  ['IRN', 'High risk · Betting Economy'],
 ]
 
 const topics = ['Investigations', 'iGaming', 'Crypto', 'Fintech', 'Offshore']
@@ -145,7 +145,7 @@ function HomepageHeroBanner() {
 <aside className="col-span-12 lg:col-span-3">
   <div className="rounded-[24px] bg-[rgba(5,7,5,0.82)] p-3.5 backdrop-blur-sm sm:p-4">
     <div className="text-[1.2rem] font-semibold tracking-[-0.05em] text-[#9fbe63] sm:text-[1.35rem]">
-      MAY 2026
+      JUNE 2026
     </div>
 
     <div className="mt-4 text-[0.62rem] uppercase tracking-[0.28em] text-[#9ca19c] sm:text-[0.68rem]">
@@ -185,7 +185,7 @@ function HomepageFeaturedInvestigation() {
             <div className="h-1 w-1 rounded-full bg-neutral-500" />
 
             <div className="text-[0.68rem] text-neutral-500 sm:text-xs">
-              Published Nov 18, 2024
+              Published June, 2026
             </div>
 
             <div className="h-1 w-1 rounded-full bg-neutral-500" />
@@ -265,15 +265,17 @@ function FeedCard({
     tone: string
   }
 }) {
-  const href = item.title.includes('Anjouan')
-  ? '/investigations/anjouan'
-  : item.title.includes('Curaçao')
-    ? '/investigations/curacao'
-    : item.title.includes('Iran')
-      ? '/investigations/iran'
-      : item.title.includes('When Losing Becomes Optional')
-        ? '/investigations/claims-industry'
-        : '#'
+  const href = item.title.includes('The Market for Tomorrow\'s Secrets')
+  ? '/investigations/prediction'
+  : item.title.includes('Anjouan')
+    ? '/investigations/anjouan'
+    : item.title.includes('Curaçao')
+      ? '/investigations/curacao'
+      : item.title.includes('Iran')
+        ? '/investigations/iran'
+        : item.title.includes('When Losing Becomes Optional')
+          ? '/investigations/claims-industry'
+          : '#'
 
   return (
     <article className="grid gap-4 rounded-[22px] bg-black/20 p-4 md:grid-cols-[minmax(0,240px)_minmax(0,1fr)] md:items-start">
@@ -339,7 +341,7 @@ export default function HomeLayout() {
               Latest investigations
             </p>
 
-            <span className="text-xs text-white/35">View all</span>
+        
           </div>
 
           <div className="mt-4">

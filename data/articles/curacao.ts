@@ -10,7 +10,7 @@ import {
 } from './shared'
 export const curacaoArticle: InvestigationArticle = {
   eyebrow: 'Investigations',
-  published: 'May 2026',
+  published: 'June 2026',
   publishedAt: '2026-05-02',
 themes: ['igaming'],
   readTime: '12 min read',

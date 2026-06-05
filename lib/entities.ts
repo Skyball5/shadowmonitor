@@ -931,4 +931,293 @@ curacaoBankruptcyLaw: {
   aliases: ['Faillissementsbesluit 1931'],
   relatedEntities: ['bankruptcyPetition', 'damaCase', 'araxioCase'],
 },
+  predictionMarkets: {
+    id: 'predictionMarkets',
+    name: 'Prediction Markets',
+    type: 'concept',
+    shortDescription:
+      'Markets where participants trade probabilities of future events.',
+    description:
+      'Prediction markets are financial venues where participants buy and sell contracts tied to the outcome of future events, from elections and sanctions to wars and diplomatic agreements. Their price is supposed to represent the market-implied probability of a given outcome.',
+    status: 'Active concept',
+    relatedEntities: ['eventContracts', 'marketProbability', 'collectiveIntelligence', 'polymarket', 'kalshi'],
+  },
+
+  eventContracts: {
+    id: 'eventContracts',
+    name: 'Event Contracts',
+    type: 'concept',
+    shortDescription:
+      'Binary contracts tied to the outcome of a future event.',
+    description:
+      'Event contracts are financial instruments that pay out depending on whether a specific future event happens. They are the core building block of prediction markets and turn uncertainty into a tradable asset.',
+    status: 'Active market structure',
+    relatedEntities: ['predictionMarkets', 'marketProbability', 'futureEvent'],
+  },
+
+  insiderTrading: {
+    id: 'insiderTrading',
+    name: 'Insider Trading',
+    type: 'concept',
+    shortDescription:
+      'Trading on non-public information for financial gain.',
+    description:
+      'Insider trading is the practice of profiting from material non-public information. In prediction markets, the category becomes more complex because the information may concern future events rather than corporate actions.',
+    status: 'Regulated / prohibited in many contexts',
+    relatedEntities: ['eventContracts', 'predictionMarkets', 'cftc'],
+  },
+
+  frenchWhale: {
+    id: 'frenchWhale',
+    name: 'French Whale',
+    type: 'person',
+    shortDescription:
+      'A large Polymarket trader whose Trump positions drew major attention during the 2024 U.S. election cycle.',
+    description:
+      '“French Whale” is the nickname given by journalists to a major Polymarket participant who placed very large bets in favor of Donald Trump during the U.S. election cycle. The case became a flashpoint in debates over whether prediction markets reflect collective intelligence or simply the influence of a few large players.',
+    status: 'Journalistic nickname',
+    relatedEntities: ['polymarket', 'marketProbability', 'collectiveIntelligence'],
+  },
+
+  marketProbability: {
+    id: 'marketProbability',
+    name: 'Market Probability',
+    type: 'concept',
+    shortDescription:
+      'The price-implied likelihood of a future event.',
+    description:
+      'Market probability is the likelihood of an event as implied by the current trading price of a contract. In prediction markets, this number often becomes the public shorthand for what the market thinks will happen next.',
+    status: 'Active concept',
+    relatedEntities: ['predictionMarkets', 'eventContracts', 'publicPerception'],
+  },
+
+  collectiveIntelligence: {
+    id: 'collectiveIntelligence',
+    name: 'Collective Intelligence',
+    type: 'concept',
+    shortDescription:
+      'The idea that many independent participants can aggregate into a useful signal.',
+    description:
+      'Collective intelligence is the theory that a large group of independent participants can combine their knowledge into a better forecast than a single expert. Prediction markets are often justified on this basis.',
+    status: 'Concept',
+    relatedEntities: ['predictionMarkets', 'marketProbability', 'largeWallet'],
+  },
+
+  emanuelFabian: {
+    id: 'emanuelFabian',
+    name: 'Emanuel Fabian',
+    type: 'person',
+    shortDescription:
+      'The Times of Israel correspondent whose reporting became part of a Polymarket dispute.',
+    description:
+      'Emanuel Fabian is a journalist at The Times of Israel. His reporting on an Iranian strike became entangled with Polymarket trading when market participants argued that the wording of his article affected payout conditions on a contract.',
+    status: 'Active journalist',
+    relatedEntities: ['timesOfIsrael', 'polymarket', 'publicPerception'],
+  },
+
+  timesOfIsrael: {
+    id: 'timesOfIsrael',
+    name: 'The Times of Israel',
+    type: 'organization',
+    shortDescription:
+      'An Israeli news outlet central to the Fabian / Polymarket story.',
+    description:
+      'The Times of Israel is an English-language Israeli news outlet. In the prediction-markets context, it became notable because one of its reporters was drawn into a dispute over the wording of a story that affected contract payouts on Polymarket.',
+    status: 'Active media outlet',
+    relatedEntities: ['emanuelFabian', 'publicPerception', 'polymarket'],
+  },
+
+  publicPerception: {
+    id: 'publicPerception',
+    name: 'Public Perception',
+    type: 'concept',
+    shortDescription:
+      'The shared narrative formed by media, markets and audiences.',
+    description:
+      'Public perception is the collective understanding of events formed by news coverage, social reaction and market signals. In prediction markets, price changes can quickly become part of that perception loop.',
+    status: 'Concept',
+    relatedEntities: ['emanuelFabian', 'marketProbability', 'informationInfrastructure'],
+  },
+
+  kalshi: {
+    id: 'kalshi',
+    name: 'Kalshi',
+    type: 'company',
+    shortDescription:
+      'A U.S.-regulated prediction-market platform.',
+    description:
+      'Kalshi is a U.S. prediction-market company that became central to legal debates over whether event contracts should be treated as legitimate financial products or restricted forms of betting. Its court battles helped define the modern prediction-market category.',
+    status: 'Active platform',
+    relatedEntities: ['cftc', 'predictionMarkets', 'eventContracts'],
+  },
+
+  cftc: {
+    id: 'cftc',
+    name: 'Commodity Futures Trading Commission',
+    type: 'regulator',
+    shortDescription:
+      'The U.S. regulator overseeing derivatives and event-contract markets.',
+    description:
+      'The Commodity Futures Trading Commission is the U.S. federal regulator responsible for derivatives markets, including event contracts. It has become one of the key institutions shaping the legal boundary around prediction markets.',
+    status: 'Active regulator',
+    aliases: ['CFTC'],
+    relatedEntities: ['kalshi', 'predictionMarkets', 'insiderTrading'],
+  },
+
+  forecastingSystem: {
+    id: 'forecastingSystem',
+    name: 'Forecasting System',
+    type: 'concept',
+    shortDescription:
+      'A mechanism for turning dispersed signals into probability estimates.',
+    description:
+      'A forecasting system is any mechanism that aggregates signals and converts them into predictions about future events. In the prediction-market context, the term helps distinguish these platforms from ordinary betting venues.',
+    status: 'Concept',
+    relatedEntities: ['predictionMarkets', 'informationInfrastructure', 'osint'],
+  },
+
+  informationInfrastructure: {
+    id: 'informationInfrastructure',
+    name: 'Information Infrastructure',
+    type: 'concept',
+    shortDescription:
+      'The systems that carry and shape information about the future.',
+    description:
+      'Information infrastructure refers to the network of platforms, media channels, data flows and institutions that determine how signals about future events are produced, circulated and interpreted.',
+    status: 'Concept',
+    relatedEntities: ['predictionMarkets', 'publicPerception', 'forecastingSystem'],
+  },
+
+  pentagonPizzaIndex: {
+    id: 'pentagonPizzaIndex',
+    name: 'Pentagon Pizza Index',
+    type: 'concept',
+    shortDescription:
+      'An OSINT signal based on unusual late-night pizza orders near U.S. defense institutions.',
+    description:
+      'The Pentagon Pizza Index is a popular open-source-intelligence meme and heuristic suggesting that unusual spikes in pizza orders near the Pentagon can correlate with emergency activity, late-night work or major geopolitical developments.',
+    status: 'Internet OSINT heuristic',
+    relatedEntities: ['osint', 'publicPerception', 'forecastingSystem'],
+  },
+
+  osint: {
+    id: 'osint',
+    name: 'OSINT',
+    type: 'concept',
+    shortDescription:
+      'Open-source intelligence built from public signals.',
+    description:
+      'Open-source intelligence, or OSINT, refers to the practice of collecting and analyzing publicly available information to infer hidden events or future developments. In the article, it appears as part of the broader ecosystem of trace-based forecasting.',
+    status: 'Active practice',
+    aliases: ['Open-source intelligence'],
+    relatedEntities: ['pentagonPizzaIndex', 'predictionMarkets', 'forecastingSystem'],
+  },
+
+  financializationOfTheFuture: {
+    id: 'financializationOfTheFuture',
+    name: 'Financialization of the Future',
+    type: 'concept',
+    shortDescription:
+      'The process of turning expectations about tomorrow into tradable value.',
+    description:
+      'Financialization of the future is the broader process by which expectations, probabilities and future events become priced, traded and monetized through markets and derivatives-like structures.',
+    status: 'Concept',
+    relatedEntities: ['predictionMarkets', 'eventContracts', 'knowledgeAboutTomorrow'],
+  },
+
+  knowledgeAboutTomorrow: {
+    id: 'knowledgeAboutTomorrow',
+    name: 'Knowledge About Tomorrow',
+    type: 'concept',
+    shortDescription:
+      'Information about events that have not yet happened.',
+    description:
+      'Knowledge about tomorrow is the central resource in prediction markets: information about future events that can be used to form a trading advantage before the event occurs.',
+    status: 'Concept',
+    relatedEntities: ['futureEvent', 'predictionMarkets', 'insiderTrading'],
+  },
+
+  futureEvent: {
+    id: 'futureEvent',
+    name: 'Future Event',
+    type: 'concept',
+    shortDescription:
+      'An event that has not happened yet but can already be traded on.',
+    description:
+      'A future event is any not-yet-occurring occurrence that can become the basis of a contract, probability estimate or speculative trade. It is the underlying object of prediction-market trading.',
+    status: 'Concept',
+    relatedEntities: ['eventContracts', 'knowledgeAboutTomorrow', 'predictionMarkets'],
+  },
+
+  largeWallet: {
+    id: 'largeWallet',
+    name: 'Large Wallet',
+    type: 'concept',
+    shortDescription:
+      'A participant with enough capital to move market odds.',
+    description:
+      'A large wallet is shorthand for a market participant whose capital is large enough to materially influence prices. In prediction markets, that can matter as much as information itself.',
+    status: 'Concept',
+    relatedEntities: ['frenchWhale', 'marketProbability', 'collectiveIntelligence'],
+  },
+
+  israeliAirForceMajor: {
+    id: 'israeliAirForceMajor',
+    name: 'Israeli Air Force Major',
+    type: 'person',
+    shortDescription:
+      'An unnamed reservist accused of leaking strike timing to enable Polymarket trades.',
+    description:
+      'An unnamed Israeli Air Force reservist and major who was accused of sharing classified information about a planned strike on Iran so that bets could be placed on Polymarket before the event occurred.',
+    status: 'Unnamed defendant',
+    relatedEntities: ['omerZiv', 'polymarket', 'insiderTrading'],
+  },
+
+  omerZiv: {
+    id: 'omerZiv',
+    name: 'Omer Ziv',
+    type: 'person',
+    shortDescription:
+      'Former iGaming operator and co-defendant in the Polymarket case.',
+    description:
+      'Omer Ziv is the civilian co-defendant in the Israeli Polymarket case. According to reporting, he had a background in online gambling and was accused of using leaked information to place profitable bets on future military action.',
+    status: 'Charged defendant',
+    relatedEntities: ['israeliAirForceMajor', 'polymarket', 'iGaming'],
+  },
+
+  polymarket: {
+    id: 'polymarket',
+    name: 'Polymarket',
+    type: 'company',
+    shortDescription:
+      'A prediction-market platform used to trade on future events.',
+    description:
+      'Polymarket is a prediction-market platform that allows users to trade contracts tied to future political, geopolitical and cultural outcomes. It became one of the defining platforms in the new wave of event-contract markets.',
+    status: 'Active platform',
+    relatedEntities: ['predictionMarkets', 'eventContracts', 'frenchWhale', 'emanuelFabian'],
+  },
+
+  bloomberg: {
+    id: 'bloomberg',
+    name: 'Bloomberg',
+    type: 'company',
+    shortDescription:
+      'A financial media and data company that incorporates market probabilities.',
+    description:
+      'Bloomberg is a global financial media and data company. In the prediction-market context, it matters because market probabilities have increasingly been folded into its reporting and professional information systems.',
+    status: 'Active media company',
+    relatedEntities: ['predictionMarkets', 'publicPerception', 'informationInfrastructure'],
+  },
+
+  dowJones: {
+    id: 'dowJones',
+    name: 'Dow Jones',
+    type: 'company',
+    shortDescription:
+      'A news and information company that partnered with Polymarket.',
+    description:
+      'Dow Jones is a media and information company whose partnership with Polymarket signaled that prediction-market data was becoming part of mainstream professional news infrastructure.',
+    status: 'Active media company',
+    relatedEntities: ['polymarket', 'predictionMarkets', 'informationInfrastructure'],
+  },
 }

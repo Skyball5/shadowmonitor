@@ -17,7 +17,7 @@ export const claimsIndustryArticle: InvestigationArticle = {
   readTime: '13 min read',
   title: "When Losing Becomes Optional: The Rise of Europe's Gambling Claim Industry",
   dek: 'For years, European courts have expanded protections for online gamblers who played on unlicensed platforms. What began as consumer protection has gradually evolved into something larger: a cross-border industry built around recovering gambling losses, financing lawsuits, and pressuring operators far beyond Europe’s borders.',
-  heroImage: '/investigations/curacao-dossier.png',
+  heroImage: '/investigations/claims-industry-dossier.png',
   pairedInvestigationSlug: 'curacao',
   timelineAfterSectionId: 'intro',
 
