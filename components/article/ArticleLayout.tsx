@@ -216,11 +216,9 @@ export default function ArticleLayout({
     <EntitySelectionProvider>
       <div className="min-h-screen bg-neutral-950">
         {/* HERO */}
-        <section className="border-b border-neutral-800/80 bg-neutral-950">
-          <div className="mx-auto max-w-7xl px-6 py-6 lg:py-8">
-            <InvestigationHeroVisual article={article} />
-          </div>
-        </section>
+<section className="border-b border-neutral-800/80 bg-neutral-950 px-4 py-4 sm:px-6 sm:py-6 lg:py-8">
+  <InvestigationHeroVisual article={article} />
+</section>
 
         {/* CONTENT */}
         <div className="mx-auto grid max-w-7xl grid-cols-12 gap-12 px-6 pb-12 pt-4 lg:pb-16 lg:pt-6">
