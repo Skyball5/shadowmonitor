@@ -150,16 +150,16 @@ function InvestigationHeroVisual({ article }: ArticleLayoutProps) {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_14%_18%,rgba(134,166,91,0.08),transparent_26%),radial-gradient(circle_at_80%_22%,rgba(134,166,91,0.06),transparent_20%),linear-gradient(180deg,rgba(255,255,255,0.03),transparent_28%)]" />
 
       {/* IMAGE */}
-      <div className="absolute inset-y-0 right-0 w-[62%]">
-        <img
-          src={heroImage}
-          alt={article.title}
-          className="h-full w-full object-cover object-[68%_50%] brightness-[1.04] contrast-[1.02]"
-        />
+<div className="absolute inset-y-0 right-0 hidden w-[62%] md:block">
+  <img
+    src={heroImage}
+    alt={article.title}
+    className="h-full w-full object-cover object-[68%_50%] brightness-[1.04] contrast-[1.02]"
+  />
 
-        {/* edge fade */}
-        <div className="absolute inset-0 bg-gradient-to-l from-black/10 via-black/8 to-transparent" />
-      </div>
+  {/* edge fade */}
+  <div className="absolute inset-0 bg-gradient-to-l from-black/10 via-black/8 to-transparent" />
+</div>
 
       {/* integrated blend */}
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,10,7,0.98)_0%,rgba(7,10,7,0.95)_22%,rgba(7,10,7,0.72)_40%,rgba(7,10,7,0.22)_68%,rgba(7,10,7,0.02)_100%)]" />
