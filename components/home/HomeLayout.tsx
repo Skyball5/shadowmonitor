@@ -203,8 +203,7 @@ function HomepageFeaturedInvestigation() {
   </Link>
 
   <p className="mt-4 max-w-2xl text-[clamp(0.95rem,1.05vw,1.1rem)] leading-relaxed text-neutral-300 sm:mt-5">
-    New documents reveal how a payment processor operated for years under the radar —
-    until it couldn’t.
+    Regulatory reform may be reshaping Curaçao’s gambling system — but operators say the deeper risk lies elsewhere.
   </p>
 </div>
 
