@@ -138,48 +138,64 @@ function renderBlock(block: ArticleBlock) {
 }
 
 function InvestigationHeroVisual({ article }: ArticleLayoutProps) {
+  const heroImage =
+    article.heroImage?.trim() ||
+    (article.title.includes('Anjouan')
+      ? '/investigations/anjouan-dossier.png'
+      : '/investigations/curacao-dossier.png')
+
   return (
-    <div className="relative isolate overflow-hidden rounded-[24px] bg-neutral-950 sm:rounded-[30px]">
+    <div className="relative isolate min-h-[500px] overflow-hidden rounded-[30px] bg-neutral-950">
       {/* subtle atmosphere */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_14%_18%,rgba(134,166,91,0.08),transparent_26%),radial-gradient(circle_at_80%_22%,rgba(134,166,91,0.06),transparent_20%),linear-gradient(180deg,rgba(255,255,255,0.03),transparent_28%)]" />
 
+      {/* IMAGE */}
+      <div className="absolute inset-y-0 right-0 w-[62%]">
+        <img
+          src={heroImage}
+          alt={article.title}
+          className="h-full w-full object-cover object-[68%_50%] brightness-[1.04] contrast-[1.02]"
+        />
+
+        {/* edge fade */}
+        <div className="absolute inset-0 bg-gradient-to-l from-black/10 via-black/8 to-transparent" />
+      </div>
+
       {/* integrated blend */}
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,10,7,0.98)_0%,rgba(7,10,7,0.96)_35%,rgba(7,10,7,0.92)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,10,7,0.98)_0%,rgba(7,10,7,0.95)_22%,rgba(7,10,7,0.72)_40%,rgba(7,10,7,0.22)_68%,rgba(7,10,7,0.02)_100%)]" />
 
       {/* CONTENT */}
-      <div className="relative flex min-h-[320px] flex-col px-5 py-5 sm:min-h-[380px] sm:px-8 sm:py-8 lg:min-h-[420px] lg:px-12 lg:py-10">
+      <div className="relative flex min-h-[500px] flex-col px-8 py-8 sm:px-10 lg:px-12">
         {/* META */}
         <div className="flex flex-wrap items-center gap-3">
-          <div className="text-[10px] uppercase tracking-[0.18em] text-neutral-500 sm:text-xs">
+          <div className="text-xs uppercase tracking-[0.18em] text-neutral-500">
             {article.eyebrow}
           </div>
 
           <div className="h-1 w-1 rounded-full bg-neutral-500" />
 
-          <div className="text-[10px] text-neutral-500 sm:text-xs">
+          <div className="text-xs text-neutral-500">
             Published {article.published}
           </div>
 
           <div className="h-1 w-1 rounded-full bg-neutral-500" />
 
-          <div className="text-[10px] text-neutral-500 sm:text-xs">
-            {article.readTime}
-          </div>
+          <div className="text-xs text-neutral-500">{article.readTime}</div>
         </div>
 
         {/* TEXT */}
-        <div className="mt-12 max-w-3xl sm:mt-20 lg:mt-24">
-          <h1 className="max-w-3xl text-[clamp(2rem,8.5vw,3.8rem)] font-semibold leading-[0.96] tracking-[-0.04em] text-neutral-100 sm:text-[clamp(2.6rem,3.6vw,3.8rem)]">
+        <div className="mt-24 max-w-3xl">
+          <h1 className="max-w-3xl text-[clamp(2.6rem,3.6vw,3.8rem)] font-semibold leading-[0.96] tracking-[-0.04em] text-neutral-100">
             {article.title}
           </h1>
 
-          <p className="mt-5 max-w-2xl text-[1.02rem] leading-relaxed text-neutral-300 sm:mt-7 sm:text-[clamp(1.25rem,1.55vw,1.65rem)]">
+          <p className="mt-7 max-w-2xl text-[clamp(1.25rem,1.55vw,1.65rem)] leading-relaxed text-neutral-300">
             {article.dek}
           </p>
 
           <Link
             href="/"
-            className="mt-10 inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-neutral-100 backdrop-blur-sm transition hover:border-white/30 hover:bg-white/15 sm:mt-12"
+            className="mt-12 inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-neutral-100 backdrop-blur-sm transition hover:bg-white/15 hover:border-white/30"
           >
             ← Back to ShadowMonitor
           </Link>
