@@ -14,17 +14,16 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://shadowmonitor.org'),
   title: 'ShadowMonitor',
   description:
     'ShadowMonitor is an independent investigative publication examining gambling infrastructure, offshore finance, and grey-zone economies.',
-
   openGraph: {
     title: 'ShadowMonitor',
     description:
       'ShadowMonitor is an independent investigative publication examining gambling infrastructure, offshore finance, and grey-zone economies.',
     url: 'https://shadowmonitor.org',
     siteName: 'ShadowMonitor',
-
     images: [
       {
         url: '/og-image.png',
@@ -33,11 +32,9 @@ export const metadata: Metadata = {
         alt: 'ShadowMonitor',
       },
     ],
-
     locale: 'en_US',
     type: 'website',
   },
-
   twitter: {
     card: 'summary_large_image',
     title: 'ShadowMonitor',
