@@ -17,6 +17,8 @@ themes: ['igaming', 'crypto', 'dark-payments'],
   title: 'Iran Built a Parallel Digital Economy Under Pressure',
   dek: 'Persian betting platforms became part of a wider bypass infrastructure built around Telegram, crypto settlement and sanctions-era survival networks.',
   heroImage: '/investigations/iran-dossier.png',
+  pairedInvestigationSlug: 'armenia',
+
   timelineAfterSectionId: 'intro',
 
   sections: [
@@ -238,6 +240,7 @@ themes: ['igaming', 'crypto', 'dark-payments'],
       'usdt',
       'armeniaCorridor',
       'dubaiLiquidityHub',
+      'crashGames'
     ],
   },
 sidebarBySection: {
@@ -259,6 +262,7 @@ sidebarBySection: {
       'telegramRouting',
       'vpnAdaptation',
       'mirrorInfrastructure',
+      'crashGames'
     ],
   },
 
@@ -312,6 +316,7 @@ sidebarBySection: {
       'telegramRouting',
       'shadowRemittances',
       'armeniaCorridor',
+      'crashGames'
     ],
   },
 },

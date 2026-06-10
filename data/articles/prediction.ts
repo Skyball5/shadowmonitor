@@ -233,6 +233,10 @@ export const predictionArticle: InvestigationArticle = {
           'The deeper point is not whether any one election was perfectly forecast. The deeper point is that once enough people believe a market may contain useful information about the future, the market starts to matter in its own right.'
         ),
         p(
+  'lg',
+  'Critics often portray prediction markets as a dangerous intrusion into public life. History suggests a more complicated pattern. Long before prediction markets existed, betting markets helped build the audiences, rituals and commercial structures that turned modern sports into mass entertainment. The relationship between wagering and social institutions may be less an anomaly than a recurring feature of how attention economies develop.'
+),
+        p(
           'lg',
           'That is why people monitor prediction markets during geopolitical crises. That is why they watch them for signals around Taiwan, Iran, sanctions and major policy decisions. That is why the market can become news even before the event happens.'
         ),

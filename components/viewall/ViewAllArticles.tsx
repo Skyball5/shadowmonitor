@@ -1,19 +1,16 @@
 import Link from 'next/link'
 
-const featuredInvestigation = {
-  type: 'Analysis',
-  date: 'June 2026',
-  title: 'The Other Armenia',
-  excerpt:
-    'While European leaders discuss Armenia’s future in Europe, a different Armenia quietly powers gambling infrastructure used across multiple continents — including parts of the ecosystem surrounding Iran’s parallel digital economy.',
-  image: '/investigations/armenia-dossier.png',
-  tags: ['ARMENIA', 'INFRASTRUCTURE', 'IGAMING'],
-  href: '/investigations/armenia',
-}
-
-const featuredTags = featuredInvestigation.tags
-
-const feedItems = [
+const archiveItems = [
+  {
+    type: 'Analysis',
+    date: 'June 2026',
+    title: 'The Other Armenia',
+    excerpt:
+      'While European leaders discuss Armenia’s future in Europe, a different Armenia quietly powers gambling infrastructure used across multiple continents — including parts of the ecosystem surrounding Iran’s parallel digital economy.',
+    image: '/investigations/armenia-dossier.png',
+    tags: ['ARMENIA', 'INFRASTRUCTURE', 'IGAMING'],
+    href: '/investigations/armenia',
+  },
   {
     type: 'Investigation',
     date: 'June 2026',
@@ -22,7 +19,7 @@ const feedItems = [
       'Regulatory reform may be reshaping Curaçao’s gambling system — but operators say the deeper risk lies elsewhere.',
     image: '/investigations/curacao-dossier.png',
     tags: ['CURAÇAO', 'AML', 'SANCTIONS', 'PAYMENT PROCESSORS'],
-    tone: 'from-[#101613] via-[#151b15] to-[#050505]',
+    href: '/investigations/curacao',
   },
   {
     type: 'Investigation',
@@ -32,7 +29,28 @@ const feedItems = [
       'Persian betting platforms became part of a wider bypass infrastructure built around Telegram, crypto settlement and sanctions-era survival networks.',
     image: '/investigations/iran-shadow-economy.png',
     tags: ['IRAN', 'TELEGRAM', 'CRYPTO'],
-    tone: 'from-[#111311] via-[#171915] to-[#050505]',
+    href: '/investigations/iran',
+  },
+  {
+    type: 'Investigation',
+    date: 'June 2026',
+    title:
+      "When Losing Becomes Optional: The Rise of Europe's Gambling Claim Industry",
+    excerpt:
+      'What began as consumer protection has evolved into a cross-border ecosystem of litigation, claim financing and gambling-loss recovery.',
+    image: '/investigations/claims-industry-dossier.png',
+    tags: ['CLAIMS', 'LITIGATION', 'EUROPE'],
+    href: '/investigations/claims-industry',
+  },
+  {
+    type: 'Investigation',
+    date: 'May 2026',
+    title: 'Anjouan: Inside the Offshore Licensing Machine',
+    excerpt:
+      'How the Union of the Comoros became one of the world’s most prolific issuers of online gambling licenses.',
+    image: '/investigations/anjouan-dossier.png',
+    tags: ['ANJOUAN', 'GAMBLING', 'OFFSHORE LICENSING'],
+    href: '/investigations/anjouan',
   },
   {
     type: 'Analysis',
@@ -42,17 +60,7 @@ const feedItems = [
       'Prediction markets are turning information about future events into a tradable asset — creating new forms of insider trading, media influence and regulatory conflict.',
     image: '/investigations/prediction-market-dossier.png',
     tags: ['PREDICTION', 'MARKETS', 'INTELLIGENCE'],
-    tone: 'from-[#101214] via-[#16191d] to-[#050505]',
-  },
-  {
-    type: 'Investigation',
-    date: 'June 2026',
-    title: "When Losing Becomes Optional: The Rise of Europe's Gambling Claim Industry",
-    excerpt:
-      'What began as consumer protection has evolved into a cross-border ecosystem of litigation, claim financing and gambling-loss recovery.',
-    image: '/investigations/claims-industry-dossier.png',
-    tags: ['CLAIMS', 'LITIGATION', 'EUROPE'],
-    tone: 'from-[#0f1511] via-[#171b15] to-[#050505]',
+    href: '/investigations/prediction',
   },
 ]
 
@@ -63,19 +71,9 @@ const jurisdictions = [
   ['IRN', 'High risk · Betting Economy'],
 ]
 
-const topics = ['Investigations', 'iGaming', 'Crypto', 'Fintech', 'Offshore']
-
-const navigation = [
-  { label: 'News', href: '#' },
-  { label: 'Investigations', href: '#latest' },
-  { label: 'Regulators', href: '#' },
-  { label: 'About', href: '#' },
-]
-
 function HomepageHeroBanner() {
   return (
     <section className="relative overflow-hidden rounded-[30px] bg-black">
-      {/* NAV */}
       <div className="relative z-20 flex min-h-[88px] items-center justify-between border-b border-[#151815] px-5 sm:px-6">
         <div className="flex items-center">
           <div className="flex h-16 w-16 items-center justify-center rounded-xl border border-[#2a2d2a] bg-[#0a0c0a] font-sans">
@@ -98,9 +96,7 @@ function HomepageHeroBanner() {
         </div>
       </div>
 
-      {/* HERO */}
       <div className="grid grid-cols-12 gap-6 px-5 pb-5 pt-8 sm:px-6 sm:pt-10 lg:items-start">
-        {/* LEFT */}
         <div className="relative z-30 col-span-12 lg:col-span-4 lg:pr-2">
           <div className="max-w-[560px]">
             <h1 className="relative z-40 text-[clamp(2.7rem,4.2vw,4.8rem)] font-semibold leading-[0.92] tracking-[-0.07em] text-white">
@@ -130,7 +126,6 @@ function HomepageHeroBanner() {
           </div>
         </div>
 
-        {/* MAP */}
         <div className="col-span-12 lg:col-span-5">
           <div className="relative h-[280px] overflow-hidden rounded-[24px] sm:h-[320px] lg:h-[380px]">
             <img
@@ -149,7 +144,6 @@ function HomepageHeroBanner() {
           </div>
         </div>
 
-        {/* RIGHT PANEL */}
         <aside className="col-span-12 lg:col-span-3">
           <div className="rounded-[24px] bg-[rgba(5,7,5,0.82)] p-3.5 backdrop-blur-sm sm:p-4">
             <div className="text-[1.2rem] font-semibold tracking-[-0.05em] text-[#9fbe63] sm:text-[1.35rem]">
@@ -180,85 +174,6 @@ function HomepageHeroBanner() {
   )
 }
 
-function HomepageFeaturedInvestigation() {
-  return (
-    <article className="overflow-hidden rounded-[28px] bg-neutral-950">
-      <div className="relative px-5 py-5 sm:px-6 sm:py-6 lg:min-h-[360px] lg:px-9 lg:py-9">
-        <div className="relative z-30 flex flex-col lg:w-[60%] lg:pr-8">
-          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-            <div className="text-[0.68rem] uppercase tracking-[0.18em] text-[#86a65b] sm:text-xs">
-              Featured publication
-            </div>
-
-            <div className="h-1 w-1 rounded-full bg-neutral-500" />
-
-            <div className="text-[0.68rem] text-neutral-500 sm:text-xs">
-              Published June, 2026
-            </div>
-
-            <div className="h-1 w-1 rounded-full bg-neutral-500" />
-
-            <div className="text-[0.68rem] text-neutral-500 sm:text-xs">
-              7 min read
-            </div>
-          </div>
-
-          <div className="mt-6 max-w-3xl sm:mt-7">
-            <Link href={featuredInvestigation.href} className="block group">
-              <h1 className="max-w-3xl text-[clamp(1.55rem,2.1vw,2.55rem)] font-semibold leading-[0.95] tracking-[-0.04em] text-neutral-100 transition group-hover:text-[#9fbe63] sm:text-[clamp(1.7rem,2.3vw,2.8rem)]">
-                {featuredInvestigation.title}
-              </h1>
-            </Link>
-
-            <p className="mt-4 max-w-2xl text-[clamp(0.95rem,1.05vw,1.1rem)] leading-relaxed text-neutral-300 sm:mt-5">
-              {featuredInvestigation.excerpt}
-            </p>
-          </div>
-
-          <div className="mt-6 lg:hidden">
-            <div className="relative h-[240px] overflow-hidden rounded-[22px] sm:h-[280px]">
-              <img
-                src={featuredInvestigation.image}
-                alt={featuredInvestigation.title}
-                className="h-full w-full object-cover"
-                style={{ objectPosition: '88% 46%' }}
-              />
-
-              <div className="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-950/24 to-transparent" />
-            </div>
-          </div>
-
-          <div className="mt-7 flex flex-wrap gap-2 sm:mt-9">
-            {featuredTags.map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full bg-white/5 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-white/55 sm:text-[11px]"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[44%] overflow-hidden rounded-r-[28px] lg:block">
-          <img
-            src={featuredInvestigation.image}
-            alt={featuredInvestigation.title}
-            className="h-full w-full object-cover"
-            style={{
-              transform: 'translateX(-2%) scale(0.82)',
-              transformOrigin: 'center center',
-              objectPosition: '92% 46%',
-            }}
-          />
-
-          <div className="absolute inset-y-0 left-0 w-[14%] bg-gradient-to-r from-neutral-950 via-neutral-950/18 to-transparent" />
-        </div>
-      </div>
-    </article>
-  )
-}
-
 function FeedCard({
   item,
 }: {
@@ -267,31 +182,15 @@ function FeedCard({
     date: string
     title: string
     excerpt: string
-    image: string | null
+    image: string
     tags: string[]
-    tone: string
+    href: string
   }
 }) {
-  const href = item.title.includes("The Market for Tomorrow's Secrets")
-    ? '/investigations/prediction'
-    : item.title.includes('Anjouan')
-      ? '/investigations/anjouan'
-      : item.title.includes('Curaçao')
-        ? '/investigations/curacao'
-        : item.title.includes('Iran')
-          ? '/investigations/iran'
-          : item.title.includes('When Losing Becomes Optional')
-            ? '/investigations/claims-industry'
-            : '#'
-
   return (
     <article className="grid gap-4 rounded-[22px] bg-black/20 p-4 md:grid-cols-[minmax(0,240px)_minmax(0,1fr)] md:items-start">
       <div className="aspect-[3/2.2] w-full overflow-hidden rounded-[18px] bg-gradient-to-br">
-        {item.image ? (
-          <img src={item.image} alt={item.title} className="h-full w-full object-cover" />
-        ) : (
-          <div className={`h-full w-full bg-gradient-to-br ${item.tone}`} />
-        )}
+        <img src={item.image} alt={item.title} className="h-full w-full object-cover" />
       </div>
 
       <div className="flex flex-col justify-center">
@@ -303,7 +202,7 @@ function FeedCard({
         </div>
 
         <h2 className="mt-3 text-[22px] font-light leading-[1.08] tracking-[-0.025em] sm:text-[28px]">
-          <Link href={href} className="transition hover:text-[#86a65b]">
+          <Link href={item.href} className="transition hover:text-[#86a65b]">
             {item.title}
           </Link>
         </h2>
@@ -327,18 +226,14 @@ function FeedCard({
   )
 }
 
-export default function HomeLayout() {
+export default function ViewAllArticles() {
   return (
     <main className="min-h-screen bg-black text-white">
       <div className="mx-auto max-w-[1600px] px-4 py-4 sm:px-6 sm:py-6">
         <HomepageHeroBanner />
 
-        <div className="mt-2">
-          <HomepageFeaturedInvestigation />
-        </div>
-
         <section
-          id="latest"
+          id="all-articles"
           className="mt-4 rounded-[24px] bg-white/[0.03] p-4 sm:p-5"
         >
           <div className="flex items-center gap-4">
@@ -347,18 +242,18 @@ export default function HomeLayout() {
             </p>
 
             <Link
-              href="/view-all-articles"
+              href="/"
               className="inline-flex rounded-lg border border-white/10 px-3 py-2 text-[0.65rem] uppercase tracking-[0.28em] text-white/70 transition hover:border-white/20 hover:text-white"
             >
-              View All
+              Back to home
             </Link>
           </div>
 
           <div className="mt-4">
-            {feedItems.map((item, index) => (
+            {archiveItems.map((item, index) => (
               <div
                 key={item.title}
-                className={index === 0 ? '' : 'border-t border-white/10 pt-4 mt-4'}
+                className={index === 0 ? '' : 'mt-4 border-t border-white/10 pt-4'}
               >
                 <FeedCard item={item} />
               </div>

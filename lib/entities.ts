@@ -1220,4 +1220,135 @@ curacaoBankruptcyLaw: {
     status: 'Active media company',
     relatedEntities: ['polymarket', 'predictionMarkets', 'informationInfrastructure'],
   },
+    digitain: {
+    id: 'digitain',
+    name: 'Digitain',
+    type: 'company',
+    shortDescription: 'An Armenian iGaming infrastructure company headquartered in Yerevan.',
+    description:
+      'Digitain is one of Armenia’s largest gambling technology companies. The group builds B2B sportsbook, casino, payments and data infrastructure for operators across Europe, Latin America, Africa and Asia, and maintains major commercial hubs in Malta and Romania.',
+    jurisdiction: 'Armenia',
+    status: 'Active technology provider',
+    aliases: ['Digitain Group'],
+    relatedEntities: ['armeniaCorridor', 'galaxsys', 'paydrom', 'betConstruct', 'mga'],
+  },
+
+  galaxsys: {
+    id: 'galaxsys',
+    name: 'Galaxsys',
+    type: 'company',
+    shortDescription: 'A Yerevan-based game studio within the Digitain ecosystem.',
+    description:
+      'Galaxsys is a game development studio created within the Digitain ecosystem. It specializes in crash games, fast games and lightweight casino products, including culturally specific titles such as Hokm and Pasur that speak directly to Persian gaming traditions.',
+    jurisdiction: 'Armenia',
+    status: 'Active game studio',
+    aliases: ['Galaxsys Studio'],
+    relatedEntities: ['digitain', 'hokm', 'pasur', 'crashGames', 'culturalLocalization'],
+  },
+
+  paydrom: {
+    id: 'paydrom',
+    name: 'Paydrom',
+    type: 'organization',
+    shortDescription: 'Digitain’s payment infrastructure platform.',
+    description:
+      'Paydrom is Digitain’s payments layer, designed to connect operators to a wide range of payment methods across multiple jurisdictions. In the broader iGaming stack it functions as an infrastructure bridge between operators, users and regional payment preferences.',
+    jurisdiction: 'Armenia',
+    status: 'Active payments platform',
+    aliases: ['Paydrom Gateway'],
+    relatedEntities: ['digitain', 'cryptoSettlement', 'armeniaCorridor', 'regulatoryArbitrage'],
+  },
+
+  igamingInfrastructure: {
+  id: 'igamingInfrastructure',
+  name: 'iGaming Infrastructure',
+  type: 'concept',
+  shortDescription: 'The technical and operational systems behind online gambling.',
+  description:
+    'iGaming infrastructure refers to the platforms, payments, data feeds, game engines, compliance tools and operational systems that make online gambling possible. Armenia has become one of the most important exporters of this infrastructure in Eurasia.',
+  status: 'Core industry layer',
+  aliases: ['iGaming infrastructure'],
+    relatedEntities: ['betConstruct', 'digitain', 'galaxsys', 'paydrom', 'armeniaCorridor'],
+  },
+
+  culturalLocalization: {
+    id: 'culturalLocalization',
+    name: 'Cultural Localization',
+    type: 'concept',
+    shortDescription: 'Adapting products to the language, habits and references of specific audiences.',
+    description:
+      'Cultural localization is the adaptation of products to a specific audience through language, game selection, payment preferences, interface design and culturally familiar references. In gambling infrastructure, it can reveal which markets a product is implicitly built for.',
+    status: 'Active product strategy',
+    aliases: ['Localization'],
+    relatedEntities: ['hokm', 'pasur', 'galaxsys', 'digitain', 'parallelEconomy'],
+  },
+
+  complianceGap: {
+    id: 'complianceGap',
+    name: 'Compliance Gap',
+    type: 'concept',
+    shortDescription: 'The distance between formal regulation and operational reality.',
+    description:
+      'The compliance gap is the space between what a company is formally licensed to do and how its infrastructure can be deployed in practice across multiple markets. In cross-border gambling, that gap often becomes visible only when regulators, journalists or counterparties start asking where the infrastructure actually leads.',
+    status: 'Persistent regulatory issue',
+    aliases: ['Regulatory gap'],
+    relatedEntities: ['mga', 'betConstruct', 'digitain', 'armeniaCorridor', 'regulatoryArbitrage'],
+  },
+
+  hokm: {
+    id: 'hokm',
+    name: 'Hokm',
+    type: 'concept',
+    shortDescription: 'A traditional Persian card game widely known across Iran and the Middle East.',
+    description:
+      'Hokm is one of the most popular traditional card games in Iran. The word refers to the trump suit in Persian card play, and the game occupies a culturally familiar place similar to bridge or hearts in other countries. Galaxsys adapted it as a digital title inside the Armenian iGaming ecosystem.',
+    jurisdiction: 'Iran',
+    status: 'Traditional game',
+    aliases: ['Hokm card game'],
+    relatedEntities: ['galaxsys', 'culturalLocalization', 'iran', 'crashGames'],
+  },
+
+  pasur: {
+    id: 'pasur',
+    name: 'Pasur',
+    type: 'concept',
+    shortDescription: 'A Persian card game adapted for digital gambling products.',
+    description:
+      'Pasur is a card game rooted in Persian gaming culture and familiar across Iran and neighbouring regions. Its presence in a digital gambling portfolio is a strong indicator of cultural adaptation aimed at Persian-speaking audiences.',
+    jurisdiction: 'Iran',
+    status: 'Traditional game',
+    aliases: ['Pasoor'],
+    relatedEntities: ['galaxsys', 'culturalLocalization', 'iran'],
+  },
+  crashGames: {
+  id: 'crashGames',
+  name: 'Crash Games',
+  type: 'concept',
+
+  shortDescription:
+    'Fast-paced gambling games built around a rising multiplier and a random crash point.',
+
+  description:
+    'Crash games are a category of online gambling products in which a multiplier increases continuously until the game randomly crashes. Players must cash out before the crash occurs in order to secure winnings. The format became particularly popular in crypto-native gambling environments due to its simplicity, mobile compatibility and integration with digital payments. In Persian-language betting markets, crash games emerged as one of the most widely adopted gambling formats and became closely associated with Telegram distribution, mirror-domain ecosystems and cryptocurrency settlement.',
+
+  status: 'Popular gambling format',
+
+  aliases: [
+    'Crash game',
+    'Crash Games',
+    'crash game',
+    'crash games',
+    'Crash betting',
+    'Multiplier games',
+  ],
+
+  relatedEntities: [
+    'cryptoSettlement',
+    'telegramRouting',
+    'mirrorInfrastructure',
+    'parallelDigitalEconomy',
+    'galaxsys',
+    'hokm',
+  ],
+},
 }

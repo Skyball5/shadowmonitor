@@ -1,4 +1,5 @@
 import { anjouanArticle } from './anjouan'
+import { armeniaArticle } from './armenia'
 import { claimsIndustryArticle } from './claims-industry'
 import { curacaoArticle } from './curacao'
 import { iranArticle } from './iran'
@@ -8,6 +9,7 @@ import type { InvestigationArticle } from './shared'
 export const articleMap: Record<string, InvestigationArticle> = {
   'claims-industry': claimsIndustryArticle,
   anjouan: anjouanArticle,
+  armenia: armeniaArticle,
   curacao: curacaoArticle,
   iran: iranArticle,
   prediction: predictionArticle,
