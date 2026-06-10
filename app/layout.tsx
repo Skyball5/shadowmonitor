@@ -16,12 +16,12 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'ShadowMonitor',
   description:
-    'Investigating the systems behind the grey zone.',
+    'ShadowMonitor is an independent investigative publication examining gambling infrastructure, offshore finance, and grey-zone economies.',
 
   openGraph: {
     title: 'ShadowMonitor',
     description:
-      'Investigating the systems behind the grey zone.',
+      'ShadowMonitor is an independent investigative publication examining gambling infrastructure, offshore finance, and grey-zone economies.',
     url: 'https://shadowmonitor.org',
     siteName: 'ShadowMonitor',
 
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'ShadowMonitor',
     description:
-      'Investigating the systems behind the grey zone.',
+      'ShadowMonitor is an independent investigative publication examining gambling infrastructure, offshore finance, and grey-zone economies.',
     images: ['/og-image.png'],
   },
 }
