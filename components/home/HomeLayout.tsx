@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import SiteNav from '@/components/layout/SiteNav'
 
 const featuredInvestigation = {
   type: 'Analysis',
@@ -57,10 +58,10 @@ const feedItems = [
 ]
 
 const jurisdictions = [
-  ['CUR', 'High risk · Bankruptcy Law'],
-  ['ANJ', 'Medium risk · iGaming'],
-  ['GER', 'Medium risk · Claims Industry'],
-  ['IRN', 'High risk · Betting Economy'],
+  ['CUR', 'Bankruptcy Law'],
+  ['ARM', 'iGaming Industry'],
+  ['GER', 'Claims Industry'],
+  ['IRN', 'Betting Economy'],
 ]
 
 const topics = ['Investigations', 'iGaming', 'Crypto', 'Fintech', 'Offshore']
@@ -75,31 +76,8 @@ const navigation = [
 function HomepageHeroBanner() {
   return (
     <section className="relative overflow-hidden rounded-[30px] bg-black">
-      {/* NAV */}
-      <div className="relative z-20 flex min-h-[88px] items-center justify-between border-b border-[#151815] px-5 sm:px-6">
-        <div className="flex items-center">
-          <div className="flex h-16 w-16 items-center justify-center rounded-xl border border-[#2a2d2a] bg-[#0a0c0a] font-sans">
-            <span className="text-[1.2rem] font-semibold leading-none tracking-[-0.06em] text-white">
-              s
-            </span>
-            <span className="text-[1.2rem] font-semibold leading-none tracking-[-0.06em] text-[#86a65b]">
-              m
-            </span>
-          </div>
-        </div>
-
-        <div className="flex items-center gap-2 sm:gap-3">
-          <Link
-            href="/secure-tip"
-            className="inline-flex rounded-lg border border-[#2a2d2a] px-3 py-2 text-xs text-[#d8d8d8] transition hover:border-[#3d433d] hover:text-white sm:px-4 sm:text-sm"
-          >
-            Secure tip
-          </Link>
-        </div>
-      </div>
-
-      {/* HERO */}
-      <div className="grid grid-cols-12 gap-6 px-5 pb-5 pt-8 sm:px-6 sm:pt-10 lg:items-start">
+  {/* HERO */}
+  <div className="grid grid-cols-12 gap-6 px-5 pb-5 pt-8 sm:px-6 sm:pt-10 lg:items-start">
         {/* LEFT */}
         <div className="relative z-30 col-span-12 lg:col-span-4 lg:pr-2">
           <div className="max-w-[560px]">
@@ -115,17 +93,26 @@ function HomepageHeroBanner() {
               <span>Intelligence</span>
             </div>
 
-            <p className="mt-8 max-w-[520px] text-[1.35rem] italic leading-[1.42] tracking-[-0.03em] text-[#d8d8d8] sm:mt-10 sm:text-[1.55rem] lg:text-[1.7rem]">
-              Exposing the hidden structures and power behind the grey zone economies.
+            <p className="mt-8 max-w-[520px] text-[1.35rem] leading-[1.42] tracking-[-0.03em] text-[#d8d8d8] sm:mt-10 sm:text-[1.55rem] lg:text-[1.7rem]">
+              Investigating the systems behind the Grey Zone.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-3 sm:mt-12 sm:gap-4">
-              <Link
-                href="/subscribe"
-                className="inline-flex rounded-xl bg-[#9fbe63] px-5 py-3.5 text-sm font-medium text-black transition hover:bg-[#b1d26d] sm:px-7 sm:py-4"
-              >
-                Subscribe
-              </Link>
+              <div className="flex items-center gap-3">
+  <Link
+    href="/about"
+    className="inline-flex items-center rounded-full bg-[#86a65b] px-5 py-2.5 text-sm font-medium text-black transition hover:opacity-90"
+  >
+    Our Approach
+  </Link>
+
+  <Link
+    href="/subscribe"
+    className="inline-flex items-center rounded-full border border-white/80 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-white/10"
+  >
+    Subscribe
+  </Link>
+</div>
             </div>
           </div>
         </div>
@@ -138,7 +125,7 @@ function HomepageHeroBanner() {
               alt="ShadowMonitor intelligence map"
               className="h-full w-full object-cover"
               style={{
-                objectPosition: '44% 50%',
+                objectPosition: '48% 46%',
                 transform: 'scale(0.95)',
                 transformOrigin: 'center center',
               }}
@@ -225,6 +212,9 @@ function HomepageFeaturedInvestigation() {
               />
 
               <div className="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-950/24 to-transparent" />
+              <div className="absolute inset-x-0 top-0 h-[14%] bg-gradient-to-b from-neutral-950/80 to-transparent" />
+
+<div className="absolute inset-x-0 bottom-0 h-[18%] bg-gradient-to-t from-neutral-950/80 to-transparent" />
             </div>
           </div>
 
@@ -241,19 +231,41 @@ function HomepageFeaturedInvestigation() {
         </div>
 
         <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[44%] overflow-hidden rounded-r-[28px] lg:block">
-          <img
-            src={featuredInvestigation.image}
-            alt={featuredInvestigation.title}
-            className="h-full w-full object-cover"
-            style={{
-              transform: 'translateX(-2%) scale(0.82)',
-              transformOrigin: 'center center',
-              objectPosition: '92% 46%',
-            }}
-          />
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_14%_18%,rgba(134,166,91,0.08),transparent_26%),radial-gradient(circle_at_80%_22%,rgba(134,166,91,0.06),transparent_20%),linear-gradient(180deg,rgba(255,255,255,0.03),transparent_28%)]" />
 
-          <div className="absolute inset-y-0 left-0 w-[14%] bg-gradient-to-r from-neutral-950 via-neutral-950/18 to-transparent" />
-        </div>
+  <div
+    className="absolute inset-0"
+    style={{
+      WebkitMaskImage:
+        'radial-gradient(ellipse at center, black 54%, transparent 100%)',
+      maskImage:
+        'radial-gradient(ellipse at center, black 54%, transparent 100%)',
+    }}
+  >
+    <img
+      src={featuredInvestigation.image}
+      alt={featuredInvestigation.title}
+      className="absolute inset-0 h-full w-full object-cover"
+      style={{
+        transform: 'translateX(-2%) scale(1)',
+        transformOrigin: 'center center',
+        objectPosition: '92% 46%',
+      }}
+    />
+  </div>
+
+  <div className="absolute inset-0 bg-gradient-to-l from-black/10 via-black/5 to-transparent" />
+
+<div className="absolute inset-y-0 left-0 w-[14%] bg-gradient-to-r from-neutral-950 via-neutral-950/85 to-transparent" />
+
+<div className="absolute inset-y-0 left-[10%] w-[10%] bg-neutral-950/25 blur-2xl" />
+
+<div className="absolute inset-y-0 right-0 w-[12%] bg-gradient-to-l from-neutral-950/70 to-transparent" />
+
+<div className="absolute inset-x-0 top-0 h-[14%] bg-gradient-to-b from-neutral-950/60 to-transparent" />
+
+<div className="absolute inset-x-0 bottom-0 h-[16%] bg-gradient-to-t from-neutral-950/60 to-transparent" />
+</div>
       </div>
     </article>
   )
@@ -330,8 +342,10 @@ function FeedCard({
 export default function HomeLayout() {
   return (
     <main className="min-h-screen bg-black text-white">
-      <div className="mx-auto max-w-[1600px] px-4 py-4 sm:px-6 sm:py-6">
-        <HomepageHeroBanner />
+  <SiteNav />
+
+  <div className="mx-auto max-w-[1600px] px-4 py-4 sm:px-6 sm:py-6">
+    <HomepageHeroBanner />
 
         <div className="mt-2">
           <HomepageFeaturedInvestigation />

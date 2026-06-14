@@ -21,6 +21,7 @@ import { entities } from '@/lib/entities'
 import EntityTag from './EntityTag'
 import PairedInvestigation from './PairedInvestigation'
 import type { ArticleEntry } from '@/data/articles'
+import SiteNav from '@/components/layout/SiteNav'
 
 type ArticleLayoutProps = {
   article: Article
@@ -270,11 +271,13 @@ export default function ArticleLayout({
   }, [article.sections, setActiveSection])
 
   return (
-    <EntitySelectionProvider>
-      <div className="min-h-screen bg-neutral-950">
-        <section className="border-b border-neutral-800/80 bg-neutral-950 px-4 py-4 sm:px-6 sm:py-6 lg:py-8">
-          <InvestigationHeroVisual article={article} />
-        </section>
+  <EntitySelectionProvider>
+    <div className="min-h-screen bg-neutral-950">
+      <SiteNav />
+
+      <section className="border-b border-neutral-800/80 bg-neutral-950 px-4 py-4 sm:px-6 sm:py-6 lg:py-8">
+        <InvestigationHeroVisual article={article} />
+      </section>
 
         <div className="mx-auto px-6 pb-12 pt-4 lg:grid lg:max-w-7xl lg:grid-cols-12 lg:gap-12 lg:pb-16 lg:pt-6">
           <main className="col-span-12 lg:col-span-8">

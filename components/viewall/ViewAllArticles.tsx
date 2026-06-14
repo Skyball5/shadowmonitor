@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import SiteNav from '@/components/layout/SiteNav'
 
 const archiveItems = [
   {
@@ -65,37 +66,16 @@ const archiveItems = [
 ]
 
 const jurisdictions = [
-  ['CUR', 'High risk · Bankruptcy Law'],
-  ['ANJ', 'Medium risk · iGaming'],
-  ['GER', 'Medium risk · Claims Industry'],
-  ['IRN', 'High risk · Betting Economy'],
+  ['CUR', 'Bankruptcy Law'],
+  ['ARM', 'iGaming Industry'],
+  ['GER', 'Claims Industry'],
+  ['IRN', 'Betting Economy'],
 ]
+
 
 function HomepageHeroBanner() {
   return (
     <section className="relative overflow-hidden rounded-[30px] bg-black">
-      <div className="relative z-20 flex min-h-[88px] items-center justify-between border-b border-[#151815] px-5 sm:px-6">
-        <div className="flex items-center">
-          <div className="flex h-16 w-16 items-center justify-center rounded-xl border border-[#2a2d2a] bg-[#0a0c0a] font-sans">
-            <span className="text-[1.2rem] font-semibold leading-none tracking-[-0.06em] text-white">
-              s
-            </span>
-            <span className="text-[1.2rem] font-semibold leading-none tracking-[-0.06em] text-[#86a65b]">
-              m
-            </span>
-          </div>
-        </div>
-
-        <div className="flex items-center gap-2 sm:gap-3">
-          <Link
-            href="/secure-tip"
-            className="inline-flex rounded-lg border border-[#2a2d2a] px-3 py-2 text-xs text-[#d8d8d8] transition hover:border-[#3d433d] hover:text-white sm:px-4 sm:text-sm"
-          >
-            Secure tip
-          </Link>
-        </div>
-      </div>
-
       <div className="grid grid-cols-12 gap-6 px-5 pb-5 pt-8 sm:px-6 sm:pt-10 lg:items-start">
         <div className="relative z-30 col-span-12 lg:col-span-4 lg:pr-2">
           <div className="max-w-[560px]">
@@ -104,25 +84,32 @@ function HomepageHeroBanner() {
             </h1>
 
             <div className="mt-6 flex flex-wrap items-center gap-3 text-[0.68rem] uppercase tracking-[0.36em] text-[#8d938d] sm:mt-8 sm:text-[0.72rem] sm:tracking-[0.38em]">
-              <span>Independent</span>
-              <span>•</span>
-              <span>Investigative</span>
-              <span>•</span>
-              <span>Intelligence</span>
-            </div>
+  <span>Independent</span>
+  <span>•</span>
+  <span>Investigative</span>
+  <span>•</span>
+  <span>Intelligence</span>
+</div>
 
-            <p className="mt-8 max-w-[520px] text-[1.35rem] italic leading-[1.42] tracking-[-0.03em] text-[#d8d8d8] sm:mt-10 sm:text-[1.55rem] lg:text-[1.7rem]">
-              Exposing the hidden structures and power behind the grey zone economies.
-            </p>
+<p className="mt-8 max-w-[520px] text-[1.35rem] leading-[1.42] tracking-[-0.03em] text-[#d8d8d8] sm:mt-10 sm:text-[1.55rem] lg:text-[1.7rem]">
+  Investigating the systems behind the grey zone.
+</p>
 
-            <div className="mt-10 flex flex-wrap items-center gap-3 sm:mt-12 sm:gap-4">
-              <Link
-                href="/subscribe"
-                className="inline-flex rounded-xl bg-[#9fbe63] px-5 py-3.5 text-sm font-medium text-black transition hover:bg-[#b1d26d] sm:px-7 sm:py-4"
-              >
-                Subscribe
-              </Link>
-            </div>
+<div className="mt-10 flex flex-wrap items-center gap-3 sm:mt-12 sm:gap-4">
+  <Link
+    href="/about"
+    className="inline-flex rounded-xl bg-[#9fbe63] px-5 py-3.5 text-sm font-medium text-black transition hover:bg-[#b1d26d] sm:px-7 sm:py-4"
+  >
+    Our Approach
+  </Link>
+
+  <Link
+    href="/subscribe"
+    className="inline-flex rounded-xl border border-white/20 px-5 py-3.5 text-sm font-medium text-white transition hover:border-white/35 hover:bg-white/5 sm:px-7 sm:py-4"
+  >
+    Subscribe
+  </Link>
+</div>
           </div>
         </div>
 
@@ -133,7 +120,7 @@ function HomepageHeroBanner() {
               alt="ShadowMonitor intelligence map"
               className="h-full w-full object-cover"
               style={{
-                objectPosition: '44% 50%',
+                objectPosition: '48% 46%',
                 transform: 'scale(0.95)',
                 transformOrigin: 'center center',
               }}
@@ -229,6 +216,8 @@ function FeedCard({
 export default function ViewAllArticles() {
   return (
     <main className="min-h-screen bg-black text-white">
+      <SiteNav />
+
       <div className="mx-auto max-w-[1600px] px-4 py-4 sm:px-6 sm:py-6">
         <HomepageHeroBanner />
 

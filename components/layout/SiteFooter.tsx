@@ -99,7 +99,7 @@ export default function SiteFooter() {
               </div>
 
               <p className="mt-4 max-w-sm leading-7">
-                Looking deep into the grey abyss.
+                Investigating the systems behind the grey zone.
               </p>
 
               <a
@@ -134,8 +134,8 @@ export default function SiteFooter() {
               </h3>
 
               <p className="mt-4 max-w-sm leading-7 text-white/55">
-                Independent investigative publication focused on offshore structures,
-                regulatory pressure, and financial opacity.
+                Independent investigative publication covering the systems,
+  infrastructure and pressures shaping the grey zone economy.
               </p>
 
               <p className="mt-4 text-white/70">
