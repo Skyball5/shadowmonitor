@@ -92,24 +92,26 @@ function HomepageHeroBanner() {
 </div>
 
 <p className="mt-8 max-w-[520px] text-[1.35rem] leading-[1.42] tracking-[-0.03em] text-[#d8d8d8] sm:mt-10 sm:text-[1.55rem] lg:text-[1.7rem]">
-  Investigating the systems behind the grey zone.
+  Investigating the systems behind the Grey Zone.
 </p>
 
 <div className="mt-10 flex flex-wrap items-center gap-3 sm:mt-12 sm:gap-4">
+              <div className="flex items-center gap-3">
   <Link
     href="/about"
-    className="inline-flex rounded-xl bg-[#9fbe63] px-5 py-3.5 text-sm font-medium text-black transition hover:bg-[#b1d26d] sm:px-7 sm:py-4"
+    className="inline-flex items-center rounded-full bg-[#86a65b] px-5 py-2.5 text-sm font-medium text-black transition hover:opacity-90"
   >
     Our Approach
   </Link>
 
   <Link
     href="/subscribe"
-    className="inline-flex rounded-xl border border-white/20 px-5 py-3.5 text-sm font-medium text-white transition hover:border-white/35 hover:bg-white/5 sm:px-7 sm:py-4"
+    className="inline-flex items-center rounded-full border border-white/80 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-white/10"
   >
     Subscribe
   </Link>
 </div>
+            </div>
           </div>
         </div>
 

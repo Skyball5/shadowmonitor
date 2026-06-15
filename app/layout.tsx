@@ -17,11 +17,19 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://shadowmonitor.org'),
   title: 'ShadowMonitor',
   description:
-    'ShadowMonitor is an independent investigative publication examining gambling infrastructure, offshore finance, and grey-zone economies.',
-  openGraph: {
+    'ShadowMonitor is an independent investigative publication exploring the systems behind gambling infrastructure, offshore finance, payments and grey-zone economies.',
+  icons: {
+  icon: [
+    { url: '/favicon/favicon.ico' },
+    { url: '/favicon/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    { url: '/favicon/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+  ],
+  apple: '/favicon/apple-touch-icon.png',
+},
+    openGraph: {
     title: 'ShadowMonitor',
     description:
-      'ShadowMonitor is an independent investigative publication examining gambling infrastructure, offshore finance, and grey-zone economies.',
+      'ShadowMonitor is an independent investigative publication exploring the systems behind gambling infrastructure, offshore finance, payments and grey-zone economies.',
     url: 'https://shadowmonitor.org',
     siteName: 'ShadowMonitor',
     images: [
@@ -39,7 +47,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'ShadowMonitor',
     description:
-      'ShadowMonitor is an independent investigative publication examining gambling infrastructure, offshore finance, and grey-zone economies.',
+      'ShadowMonitor is an independent investigative publication exploring the systems behind gambling infrastructure, offshore finance, payments and grey-zone economies.',
     images: ['/og-image.png'],
   },
 }

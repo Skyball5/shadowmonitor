@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 const exploreLinks = [
-  { href: '/investigations/curacao', label: 'Featured investigation' },
+  { href: '/investigations/armenia', label: 'Featured investigation' },
   { href: '/subscribe', label: 'Subscribe' },
   { href: '/secure-tip', label: 'Secure Tip' },
 ]
@@ -13,7 +13,7 @@ const contactLinks = [
     icon: MailIcon,
   },
   {
-    href: 'https://t.me/shadowmonitor',
+    href: 'https://t.me/shadowmonitor_org',
     label: 'Telegram',
     icon: TelegramIcon,
   },
