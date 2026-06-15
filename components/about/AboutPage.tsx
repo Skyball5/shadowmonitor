@@ -6,7 +6,7 @@ const heroImage = '/about/about-hero.png'
 function AboutHeroVisual() {
   return (
     <article className="overflow-hidden rounded-[28px] bg-neutral-950">
-      <div className="relative px-5 py-5 sm:px-6 sm:py-6 lg:min-h-[360px] lg:px-9 lg:py-9">
+      <div className="relative px-5 py-2 sm:px-6 sm:py-4 lg:min-h-[360px] lg:px-9 lg:py-9">
         <div className="relative z-30 flex flex-col lg:w-[60%] lg:pr-8">
           <div className="flex flex-wrap items-center gap-2 sm:gap-3">
             <div className="text-[0.68rem] uppercase tracking-[0.18em] text-[#86a65b] sm:text-xs">
@@ -20,7 +20,7 @@ function AboutHeroVisual() {
             </div>
           </div>
 
-          <div className="mt-6 max-w-3xl sm:mt-7">
+          <div className="mt-4 max-w-3xl sm:mt-5">
             <h1 className="max-w-3xl text-[clamp(1.55rem,2.1vw,2.55rem)] font-semibold leading-[0.95] tracking-[-0.04em] text-neutral-100 sm:text-[clamp(1.7rem,2.3vw,2.8rem)]">
               Investigating the Systems Behind the Grey Zone
             </h1>
@@ -38,10 +38,10 @@ function AboutHeroVisual() {
               )}
             </div>
 
-            <p className="mt-5 max-w-2xl text-[clamp(0.95rem,1.05vw,1.1rem)] leading-relaxed text-neutral-300 sm:mt-6">
+            <p className="mt-4 max-w-2xl text-[clamp(0.95rem,1.05vw,1.1rem)] leading-relaxed text-neutral-300 sm:mt-6">
               We analyse how systems emerge, adapt and evolve under pressure.
             </p>
-            <div className="mt-10">
+            <div className="mt-8 sm:mt-10">
   <Link
     href="/"
     className="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-neutral-100 backdrop-blur-sm transition hover:border-white/30 hover:bg-white/15"
@@ -49,21 +49,6 @@ function AboutHeroVisual() {
     ← Back to ShadowMonitor
   </Link>
 </div>
-          </div>
-        </div>
-
-        <div className="mt-6 lg:hidden">
-          <div className="relative h-[240px] overflow-hidden rounded-[22px] sm:h-[280px]">
-            <img
-              src={heroImage}
-              alt="ShadowMonitor About Hero"
-              className="h-full w-full object-cover"
-              style={{ objectPosition: '48% 46%' }}
-            />
-
-            <div className="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-950/24 to-transparent" />
-            <div className="absolute inset-x-0 top-0 h-[14%] bg-gradient-to-b from-neutral-950/80 to-transparent" />
-            <div className="absolute inset-x-0 bottom-0 h-[18%] bg-gradient-to-t from-neutral-950/80 to-transparent" />
           </div>
         </div>
 
@@ -112,7 +97,7 @@ export default function AboutPage() {
   <SiteNav />
 
   <div className="mx-auto max-w-[1600px] px-4 py-4 sm:px-6 sm:py-6">
-    <div className="mt-6">
+    <div className="mt-2 sm:mt-3">
       <AboutHeroVisual />
     </div>
 
