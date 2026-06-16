@@ -234,7 +234,7 @@ export default function ViewAllArticles() {
 
             <Link
               href="/"
-              className="inline-flex rounded-lg border border-white/10 px-3 py-2 text-[0.65rem] uppercase tracking-[0.28em] text-white/70 transition hover:border-white/20 hover:text-white"
+              className="inline-flex whitespace-nowrap rounded-lg border border-white/20 px-5 py-2 text-[0.65rem] uppercase tracking-[0.28em] text-white/80 transition hover:border-white/30 hover:text-white"
             >
               Back to home
             </Link>
