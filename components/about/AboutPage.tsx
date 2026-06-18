@@ -16,7 +16,7 @@ function AboutHeroVisual() {
             <div className="h-1 w-1 rounded-full bg-neutral-500" />
 
             <div className="text-[0.68rem] text-neutral-500 sm:text-xs">
-              Independent investigative intelligence
+              Independent Investigative Intelligence
             </div>
           </div>
 
@@ -26,25 +26,38 @@ function AboutHeroVisual() {
             </h1>
 
             <div className="mt-5 flex flex-wrap gap-2 sm:mt-6">
-              {['iGaming', 'Crypto', 'Offshore Finance', 'Payments', 'Infrastructure'].map(
-                (tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full bg-white/5 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-white/55 sm:text-[11px]"
-                  >
-                    {tag}
-                  </span>
-                ),
-              )}
-            </div>
+  {['iGaming', 'Crypto', 'Offshore Finance', 'Payments', 'Infrastructure'].map(
+    (tag) => (
+      <span
+        key={tag}
+        className="rounded-full bg-white/5 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-white/55 sm:text-[11px]"
+      >
+        {tag}
+      </span>
+    ),
+  )}
+</div>
 
-            <p className="mt-4 max-w-2xl text-[clamp(0.95rem,1.05vw,1.1rem)] leading-relaxed text-neutral-300 sm:mt-6">
-              We analyse how systems emerge, adapt and evolve under pressure.
-            </p>
-            <div className="mt-8 sm:mt-10">
+<div className="mt-6 max-w-[34rem] sm:mt-7">
+  <div className="rounded-[24px] border border-white/10 bg-white/[0.03] px-5 py-5 sm:px-6 sm:py-6">
+    <blockquote className="space-y-4">
+      <p className="text-[clamp(0.95rem,1.05vw,1.05rem)] leading-relaxed text-neutral-300">
+        We analyse how systems emerge, adapt and evolve under pressure. Our focus is on the
+        structures beneath events — the incentives, regulatory frameworks and hidden dynamics
+        that shape outcomes long before they become visible.
+      </p>
+    </blockquote>
+
+    <p className="mt-4 text-sm font-medium text-neutral-300 sm:mt-5">
+      — Daryn Kellan, Founder &amp; Editor
+    </p>
+  </div>
+</div>
+
+<div className="mt-6 sm:mt-8">
   <Link
     href="/"
-    className="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-neutral-100 backdrop-blur-sm transition hover:border-white/30 hover:bg-white/15"
+    className="inline-flex w-fit items-center gap-2 rounded-full border border-[#86a65b]/40 bg-[#86a65b] px-4 py-2 text-sm font-medium text-neutral-950 transition hover:bg-[#9bc45f] hover:border-[#9bc45f]"
   >
     ← Back to ShadowMonitor
   </Link>
