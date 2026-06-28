@@ -15,9 +15,11 @@ import ConnectedInvestigations from './ConnectedInvestigations'
 import type {
   Article,
   ArticleBlock,
+  DocumentBlock,
   InlinePart,
 } from '@/data/articles/shared'
 import { entities } from '@/lib/entities'
+console.log('[entities check]', 'jewelOfTheDragon' in entities, Object.keys(entities).includes('jewelOfTheDragon'))
 import EntityTag from './EntityTag'
 import PairedInvestigation from './PairedInvestigation'
 import type { ArticleEntry } from '@/data/articles'
@@ -122,7 +124,56 @@ function renderInlineParts(parts: InlinePart[]): ReactNode[] {
 
   return nodes
 }
+const DOCUMENT_KIND_LABELS: Record<DocumentBlock['kind'], string> = {
+  dossier: 'DOSSIER',
+  'technical-brief': 'TECHNICAL BRIEF',
+  'legal-note': 'LEGAL NOTE',
+  'field-note': 'FIELD NOTE',
+  profile: 'PROFILE',
+}
 
+function renderDocumentBlock(block: DocumentBlock) {
+  const kindLabel = DOCUMENT_KIND_LABELS[block.kind]
+
+  return (
+    <section className="my-6 overflow-hidden rounded-[18px] border border-neutral-300 bg-[#efe9dc] shadow-[0_0_14px_rgba(0,0,0,0.05)]">
+      <div className="border-b border-neutral-300 px-5 py-2.5 sm:px-6 sm:py-2.5">
+        <div className="text-[9px] uppercase tracking-[0.28em] text-neutral-500">
+          {kindLabel}
+        </div>
+
+        <h3 className="mt-1.5 text-[1.05rem] font-semibold leading-[1.08] tracking-[-0.03em] text-neutral-900 sm:text-[1.2rem]">
+          {block.title}
+        </h3>
+
+        {block.subtitle ? (
+          <div className="mt-0.5 text-[13px] leading-snug text-neutral-600">
+            {block.subtitle}
+          </div>
+        ) : null}
+      </div>
+
+      <div className="px-5 py-2.5 sm:px-6 sm:py-2.5">
+        <div className="space-y-1.5">
+          {block.sections.map((section, index) => (
+            <div
+              key={`${block.kind}-${block.title}-${index}`}
+              className={index === 0 ? '' : 'border-t border-neutral-300 pt-2'}
+            >
+              <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-neutral-500">
+                {section.heading}
+              </div>
+
+              <div className="mt-1 text-[0.93rem] leading-[1.45] text-neutral-800">
+                {section.body}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
 function renderBlock(block: ArticleBlock) {
   if (block.type === 'callout') {
     return (
@@ -133,6 +184,10 @@ function renderBlock(block: ArticleBlock) {
         <div className="text-lg text-neutral-800">{block.text}</div>
       </div>
     )
+  }
+
+  if (block.type === 'document') {
+    return renderDocumentBlock(block)
   }
 
   const sizeClass = 'text-lg'

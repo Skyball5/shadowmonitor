@@ -81,6 +81,52 @@ export type EntityRefId =
   | 'bloomberg'
   | 'dowJones'
 
+  | 'evolution'
+| 'playtech'
+| 'blackCube'
+| 'whiteCanvas'
+| 'marcoJuffermans'
+| 'rudolfBooker'
+| 'payvision'
+| 'finTelegram'
+
+| 'aristocratLeisure'
+| 'lightAndWonder'
+| 'dragonTrain'
+| 'dragonLink'
+| 'emmaCharles'
+| 'lloydSefton'
+| 'mattWilson'
+
+| 'olympicDestroyer'
+| 'sandworm'
+| 'ciscoTalos'
+| 'lazarus'
+
+| 'yieldSec'
+| 'offshoreLicensing'
+| 'regulatoryArbitrage'
+| 'greyEconomy'
+
+| 'blackPR'
+| 'rightToBeForgotten'
+| 'counterDossiers'
+| 'tradeSecrets'
+| 'patternOfLife'
+| 'rngFingerprints'
+| 'codeSigning'
+| 'ciCdMetadata'
+
+  | 'ismailVali'
+  | 'uweLenhoff'
+  | 'galBarak'
+  | 'jewelOfTheDragon'
+  | 'ukNcsc'
+  | 'apt28FancyBear'
+  | 'nexon'
+  | 'ironmace'
+  | 'darkAndDarker'
+
 export type ThemeKey = 'igaming' | 'crypto' | 'dark-payments'
 
 export type InlinePart =
@@ -102,7 +148,27 @@ export type CalloutBlock = {
   text: string
 }
 
-export type ArticleBlock = ParagraphBlock | CalloutBlock
+export type DocumentKind =
+  | 'dossier'
+  | 'technical-brief'
+  | 'legal-note'
+  | 'field-note'
+  | 'profile'
+
+export type DocumentSection = {
+  heading: string
+  body: string
+}
+
+export type DocumentBlock = {
+  type: 'document'
+  kind: DocumentKind
+  title: string
+  subtitle?: string
+  sections: DocumentSection[]
+}
+
+export type ArticleBlock = ParagraphBlock | CalloutBlock | DocumentBlock
 
 export type ArticleSection = {
   id: string
@@ -160,6 +226,18 @@ export const callout = (
   text,
 })
 
+export const documentBlock = (
+  kind: DocumentKind,
+  title: string,
+  sections: DocumentSection[],
+  subtitle?: string
+): DocumentBlock => ({
+  type: 'document',
+  kind,
+  title,
+  subtitle,
+  sections,
+})
 export type InvestigationArticle = {
   eyebrow: string
   published: string

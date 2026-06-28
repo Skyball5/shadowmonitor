@@ -1351,4 +1351,347 @@ curacaoBankruptcyLaw: {
     'hokm',
   ],
 },
+  evolution: {
+    id: 'evolution',
+    name: 'Evolution',
+    type: 'company',
+    shortDescription: 'The live-casino supplier targeted by the commissioned report.',
+    description:
+      'Evolution is a major live-dealer game supplier in the North American market. In the article, it is the company targeted by a commissioned intelligence report and the center of the first reputation-warfare case.',
+    status: 'Active',
+    aliases: ['Evolution Gaming'],
+    relatedEntities: ['playtech', 'blackCube'],
+  },
+
+  playtech: {
+    id: 'playtech',
+    name: 'Playtech',
+    type: 'company',
+    shortDescription: 'Evolution’s direct competitor in the North American live-casino market.',
+    description:
+      'Playtech is a gambling technology company and direct competitor to Evolution in live casino. In the article, it is described as the client that commissioned the Black Cube report.',
+    status: 'Active',
+    aliases: ['Playtech plc'],
+    relatedEntities: ['evolution', 'blackCube', 'payvision'],
+  },
+
+  blackCube: {
+    id: 'blackCube',
+    name: 'Black Cube',
+    type: 'organization',
+    shortDescription: 'Private intelligence firm hired to produce the report on Evolution.',
+    description:
+      'Black Cube is a private intelligence firm. In the article, it produced the report on Evolution that later became the center of the Playtech dispute.',
+    status: 'Active',
+    aliases: ['Black Cube'],
+    relatedEntities: ['evolution', 'playtech'],
+  },
+
+  whiteCanvas: {
+    id: 'whiteCanvas',
+    name: 'White Canvas',
+    type: 'organization',
+    shortDescription: 'SEO and reputation-management outlet founded by Marco Juffermans.',
+    description:
+      'White Canvas is a reputation-management and SEO cleanup business associated in the article with de-googling and suppression of negative material.',
+    status: 'Active',
+    aliases: ['White Canvas'],
+    relatedEntities: ['marcoJuffermans', 'payvision', 'finTelegram'],
+  },
+
+  marcoJuffermans: {
+    id: 'marcoJuffermans',
+    name: 'Marco Juffermans',
+    type: 'person',
+    shortDescription: 'Amsterdam-based consultant linked to reputation cleanup work.',
+    description:
+      'Marco Juffermans is an Amsterdam-based consultant associated with “right to be forgotten” and de-googling work, and founder of White Canvas.',
+    status: 'Active',
+    relatedEntities: ['whiteCanvas', 'payvision'],
+  },
+
+  rudolfBooker: {
+    id: 'rudolfBooker',
+    name: 'Rudolf Booker',
+    type: 'person',
+    shortDescription: 'Former CEO of Payvision referenced in the FinTelegram account.',
+    description:
+      'Rudolf Booker is the executive named in the article as the CEO of Payvision in the period discussed by FinTelegram.',
+    status: 'Active',
+    relatedEntities: ['payvision', 'marcoJuffermans'],
+  },
+
+  payvision: {
+    id: 'payvision',
+    name: 'Payvision',
+    type: 'company',
+    shortDescription: 'Dutch payment company linked in the article to fraud-processing and cleanup efforts.',
+    description:
+      'Payvision is a Dutch payments company that the article describes as processing transactions for fraud schemes and as part of the reputation-cleanup chain.',
+    status: 'Inactive',
+    aliases: ['Payvision'],
+    relatedEntities: ['rudolfBooker', 'whiteCanvas', 'finTelegram'],
+  },
+
+  finTelegram: {
+    id: 'finTelegram',
+    name: 'FinTelegram',
+    type: 'organization',
+    shortDescription: 'Investigative outlet cited for the Telegram exchange and cleanup account.',
+    description:
+      'FinTelegram is an investigative trade outlet cited in the article for reporting the Telegram exchange involving cleanup work and Payvision-linked transactions.',
+    status: 'Active',
+    aliases: ['FinTelegram'],
+    relatedEntities: ['payvision', 'whiteCanvas'],
+  },
+    aristocratLeisure: {
+    id: 'aristocratLeisure',
+    name: 'Aristocrat Leisure',
+    type: 'company',
+    shortDescription: 'The slot manufacturer that sued Light & Wonder over Dragon Train.',
+    description:
+      'Aristocrat Leisure is an Australian slot manufacturer. In the article, it is the company that brought the trade-secret case against Light & Wonder over the Dragon Train and Jewel of the Dragon games.',
+    status: 'Active',
+    aliases: ['Aristocrat', 'Aristocrat Leisure Limited'],
+    relatedEntities: ['lightAndWonder', 'dragonTrain', 'dragonLink', 'emmaCharles', 'lloydSefton'],
+  },
+
+  lightAndWonder: {
+    id: 'lightAndWonder',
+    name: 'Light & Wonder',
+    type: 'company',
+    shortDescription: 'The US rival accused of using Aristocrat trade secrets.',
+    description:
+      'Light & Wonder is a US gambling technology company. In the article, it is the direct rival accused by Aristocrat of using trade secrets to develop Dragon Train and Jewel of the Dragon.',
+    status: 'Active',
+    aliases: ['Light and Wonder'],
+    relatedEntities: ['aristocratLeisure', 'dragonTrain', 'dragonLink', 'emmaCharles', 'lloydSefton', 'mattWilson'],
+  },
+
+  dragonTrain: {
+    id: 'dragonTrain',
+    name: 'Dragon Train',
+    type: 'concept',
+    shortDescription: 'The game at the center of the Aristocrat vs. Light & Wonder dispute.',
+    description:
+      'Dragon Train is the game that Aristocrat alleged was built using its mathematical model and trade secrets, making it one of the central objects in the litigation.',
+    status: 'Pulled from market',
+    relatedEntities: ['aristocratLeisure', 'lightAndWonder', 'dragonLink'],
+  },
+
+  dragonLink: {
+    id: 'dragonLink',
+    name: 'Dragon Link',
+    type: 'concept',
+    shortDescription: 'Aristocrat’s earlier reference game in the dispute.',
+    description:
+      'Dragon Link is the earlier Aristocrat game that the company said Dragon Train and related products were built too closely around.',
+    status: 'Active',
+    relatedEntities: ['aristocratLeisure', 'dragonTrain', 'lightAndWonder'],
+  },
+
+  emmaCharles: {
+    id: 'emmaCharles',
+    name: 'Emma Charles',
+    type: 'person',
+    shortDescription: 'Former Aristocrat developer who later joined Light & Wonder.',
+    description:
+      'Emma Charles is a former Aristocrat developer who moved to Light & Wonder and became central to the trade-secret evidence discussed in the article.',
+    status: 'Active',
+    relatedEntities: ['aristocratLeisure', 'lightAndWonder', 'lloydSefton'],
+  },
+
+  lloydSefton: {
+    id: 'lloydSefton',
+    name: 'Lloyd Sefton',
+    type: 'person',
+    shortDescription: 'Former Aristocrat developer referenced in the case.',
+    description:
+      'Lloyd Sefton is a former Aristocrat developer who moved to Light & Wonder and is mentioned in the article as part of the same litigation context as Emma Charles.',
+    status: 'Active',
+    relatedEntities: ['aristocratLeisure', 'lightAndWonder', 'emmaCharles'],
+  },
+
+  mattWilson: {
+    id: 'mattWilson',
+    name: 'Matt Wilson',
+    type: 'person',
+    shortDescription: 'Light & Wonder’s CEO quoted in the company’s response.',
+    description:
+      'Matt Wilson is the CEO of Light & Wonder. In the article, he is cited for the company’s position that the problem stemmed from a single disloyal employee rather than a corporate decision.',
+    status: 'Active',
+    relatedEntities: ['lightAndWonder'],
+  },
+    olympicDestroyer: {
+    id: 'olympicDestroyer',
+    name: 'Olympic Destroyer',
+    type: 'concept',
+    shortDescription: 'The false-flag malware case used as the attribution example.',
+    description:
+      'Olympic Destroyer is the malware operation discussed in the article as a canonical example of planted technical evidence and false attribution.',
+    status: 'Historic case',
+    relatedEntities: ['sandworm', 'ciscoTalos', 'lazarus'],
+  },
+
+  sandworm: {
+    id: 'sandworm',
+    name: 'Sandworm',
+    type: 'organization',
+    shortDescription: 'The Russian military-linked group attributed in the article’s follow-up analysis.',
+    description:
+      'Sandworm is a Russian military intelligence-linked threat group cited in the article as the actor behind Olympic Destroyer according to follow-up investigations.',
+    status: 'Active',
+    aliases: ['Sandworm Team'],
+    relatedEntities: ['olympicDestroyer', 'ciscoTalos', 'lazarus'],
+  },
+
+  ciscoTalos: {
+    id: 'ciscoTalos',
+    name: 'Cisco Talos',
+    type: 'organization',
+    shortDescription: 'Cisco’s threat-intelligence team cited in the Olympic Destroyer analysis.',
+    description:
+      'Cisco Talos is Cisco’s threat-intelligence unit, cited in the article for its analysis of Olympic Destroyer and the risks of false attribution.',
+    status: 'Active',
+    aliases: ['Talos'],
+    relatedEntities: ['olympicDestroyer', 'sandworm', 'lazarus'],
+  },
+
+  lazarus: {
+    id: 'lazarus',
+    name: 'Lazarus',
+    type: 'organization',
+    shortDescription: 'The threat group whose fingerprints were allegedly planted as a false trail.',
+    description:
+      'Lazarus is a North Korea-linked threat group referenced in the article as the apparent false trail used in the Olympic Destroyer attribution story.',
+    status: 'Active',
+    aliases: ['Lazarus Group'],
+    relatedEntities: ['olympicDestroyer', 'sandworm', 'ciscoTalos'],
+  },
+
+  yieldSec: {
+    id: 'yieldSec',
+    name: 'Yield Sec',
+    type: 'organization',
+    shortDescription: 'Gambling-market analytics platform cited for the “iceberg” description of the industry.',
+    description:
+      'Yield Sec is a gambling-market analytics platform founded by Ismail Vali. In the article, it is cited for the idea that the regulated gambling market sits above a much larger hidden mass.',
+    status: 'Active',
+    relatedEntities: ['greyEconomy', 'offshoreLicensing', 'regulatoryArbitrage'],
+  },
+    greyEconomy: {
+    id: 'greyEconomy',
+    name: 'Grey Economy',
+    type: 'concept',
+    shortDescription:
+      'The economic space between fully regulated and openly illicit activity.',
+    description:
+      'Grey Economy describes the hidden layer of commercial activity that operates between formal legality and outright criminality. In the context of ShadowMonitor, it explains how industries built around regulatory gaps, offshore structures, and weak enforcement develop their own competitive logic and supporting infrastructure.',
+    status: 'Analytical concept',
+    relatedEntities: [
+      'yieldSec',
+      'offshoreLicensing',
+      'regulatoryArbitrage',
+    ],
+  },
+    ismailVali: {
+    id: 'ismailVali',
+    name: 'Ismail Vali',
+    type: 'person',
+    shortDescription: 'Founder of Yield Sec.',
+    description:
+      'Founder of the gambling-market analytics platform Yield Sec. In the article he is cited for describing the gambling industry as an iceberg whose visible regulated part rests on a much larger hidden market.',
+    status: 'Active',
+    relatedEntities: ['yieldSec', 'greyEconomy'],
+  },
+
+  uweLenhoff: {
+    id: 'uweLenhoff',
+    name: 'Uwe Lenhoff',
+    type: 'person',
+    shortDescription: 'German fraud operator referenced in the FinTelegram reporting.',
+    description:
+      'One of the central figures in the payment-processing and reputation-cleanup episode described in the article.',
+    status: 'Deceased',
+    relatedEntities: ['galBarak', 'payvision'],
+  },
+
+  galBarak: {
+    id: 'galBarak',
+    name: 'Gal Barak',
+    type: 'person',
+    shortDescription: 'Fraud operator referenced in the FinTelegram reporting.',
+    description:
+      'Referenced in the article through the Telegram exchange concerning reputation-cleanup services.',
+    status: 'Convicted',
+    relatedEntities: ['uweLenhoff', 'payvision'],
+  },
+
+  jewelOfTheDragon: {
+    id: 'jewelOfTheDragon',
+    name: 'Jewel of the Dragon',
+    type: 'concept',
+    shortDescription: 'Companion game to Dragon Train in the Aristocrat litigation.',
+    description:
+      'One of the games withdrawn under the settlement between Aristocrat Leisure and Light & Wonder.',
+    status: 'Withdrawn',
+    relatedEntities: ['dragonTrain', 'aristocratLeisure', 'lightAndWonder'],
+  },
+
+  ukNcsc: {
+    id: 'ukNcsc',
+    name: 'UK National Cyber Security Centre',
+    type: 'organization',
+    shortDescription: 'The UK cyber agency referenced in the Olympic Destroyer investigation.',
+    description:
+      'The UK National Cyber Security Centre independently confirmed that Russian military intelligence attempted to disguise the operation as a North Korean attack.',
+    status: 'Active',
+    aliases: ['NCSC'],
+    relatedEntities: ['olympicDestroyer', 'sandworm'],
+  },
+
+  apt28FancyBear: {
+    id: 'apt28FancyBear',
+    name: 'APT28',
+    type: 'organization',
+    shortDescription: 'Russian threat group also known as Fancy Bear.',
+    description:
+      'Some independent researchers cited in the article consider APT28/Fancy Bear a possible alternative attribution for Olympic Destroyer.',
+    status: 'Active',
+    aliases: ['Fancy Bear'],
+    relatedEntities: ['sandworm', 'olympicDestroyer'],
+  },
+
+  nexon: {
+    id: 'nexon',
+    name: 'Nexon',
+    type: 'company',
+    shortDescription: 'South Korean game publisher.',
+    description:
+      'Referenced in the article as the plaintiff in the trade-secret dispute surrounding Dark and Darker.',
+    status: 'Active',
+    relatedEntities: ['ironmace', 'darkAndDarker'],
+  },
+
+  ironmace: {
+    id: 'ironmace',
+    name: 'Ironmace',
+    type: 'company',
+    shortDescription: 'Game studio behind Dark and Darker.',
+    description:
+      'Referenced in the article as the defendant in the Nexon trade-secret litigation.',
+    status: 'Active',
+    relatedEntities: ['nexon', 'darkAndDarker'],
+  },
+
+  darkAndDarker: {
+    id: 'darkAndDarker',
+    name: 'Dark and Darker',
+    type: 'concept',
+    shortDescription: 'Game referenced in the Nexon trade-secret dispute.',
+    description:
+      'Used in the article as an adjacent example of litigation over alleged misuse of proprietary development assets.',
+    status: 'Released',
+    relatedEntities: ['nexon', 'ironmace'],
+  },
 }

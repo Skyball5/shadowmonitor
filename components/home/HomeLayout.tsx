@@ -4,17 +4,27 @@ import SiteNav from '@/components/layout/SiteNav'
 const featuredInvestigation = {
   type: 'Analysis',
   date: 'June 2026',
-  title: 'The Other Armenia',
+  title: 'The Market of Reputation Warfare',
   excerpt:
-    'While European leaders discuss Armenia’s future in Europe, a different Armenia quietly powers gambling infrastructure used across multiple continents — including parts of the ecosystem surrounding Iran’s parallel digital economy.',
-  image: '/investigations/armenia-dossier.png',
-  tags: ['ARMENIA', 'INFRASTRUCTURE', 'IGAMING'],
-  href: '/investigations/armenia',
+    'Private intelligence firms, SEO takedown specialists, stolen algorithms, and false attribution through planted code: in iGaming, reputation has become a weapon. Here is how the market that manufactures and destroys it on demand actually works.',
+  image: '/investigations/reputation-warfare.png',
+  tags: ['REPUTATION', 'SEO TAKEDOWNS', 'ATTRIBUTION'],
+  href: '/investigations/reputation-warfare',
 }
 
 const featuredTags = featuredInvestigation.tags
 
 const feedItems = [
+  {
+  type: 'Analysis',
+  date: 'June 2026',
+  title: 'The Other Armenia',
+  excerpt:
+    'While European leaders discuss Armenia’s future in Europe, a different Armenia quietly powers gambling infrastructure used across multiple continents — including parts of the ecosystem surrounding Iran’s parallel digital economy.',
+  image: '/investigations/armenia-dossier.png',
+  tags: ['ARMENIA', 'INFRASTRUCTURE', 'IGAMING'],
+  tone: 'from-[#101613] via-[#151b15] to-[#050505]',
+},
   {
     type: 'Investigation',
     date: 'June 2026',
@@ -45,16 +55,7 @@ const feedItems = [
     tags: ['PREDICTION', 'MARKETS', 'INTELLIGENCE'],
     tone: 'from-[#101214] via-[#16191d] to-[#050505]',
   },
-  {
-    type: 'Investigation',
-    date: 'June 2026',
-    title: "When Losing Becomes Optional: The Rise of Europe's Gambling Claim Industry",
-    excerpt:
-      'What began as consumer protection has evolved into a cross-border ecosystem of litigation, claim financing and gambling-loss recovery.',
-    image: '/investigations/claims-industry-dossier.png',
-    tags: ['CLAIMS', 'LITIGATION', 'EUROPE'],
-    tone: 'from-[#0f1511] via-[#171b15] to-[#050505]',
-  },
+  
 ]
 
 const jurisdictions = [
@@ -186,7 +187,7 @@ function HomepageFeaturedInvestigation() {
             <div className="h-1 w-1 rounded-full bg-neutral-500" />
 
             <div className="text-[0.68rem] text-neutral-500 sm:text-xs">
-              7 min read
+              20 min read
             </div>
           </div>
 
@@ -284,17 +285,19 @@ function FeedCard({
     tone: string
   }
 }) {
-  const href = item.title.includes("The Market for Tomorrow's Secrets")
-    ? '/investigations/prediction'
-    : item.title.includes('Anjouan')
-      ? '/investigations/anjouan'
-      : item.title.includes('Curaçao')
-        ? '/investigations/curacao'
-        : item.title.includes('Iran')
-          ? '/investigations/iran'
-          : item.title.includes('When Losing Becomes Optional')
-            ? '/investigations/claims-industry'
-            : '#'
+    const href = item.title.includes('The Other Armenia')
+    ? '/investigations/armenia'
+    : item.title.includes("The Market for Tomorrow's Secrets")
+      ? '/investigations/prediction'
+      : item.title.includes('Anjouan')
+        ? '/investigations/anjouan'
+        : item.title.includes('Curaçao')
+          ? '/investigations/curacao'
+          : item.title.includes('Iran')
+            ? '/investigations/iran'
+            : item.title.includes('When Losing Becomes Optional')
+              ? '/investigations/claims-industry'
+              : '#'
 
   return (
     <article className="grid gap-4 rounded-[22px] bg-black/20 p-4 md:grid-cols-[minmax(0,240px)_minmax(0,1fr)] md:items-start">
@@ -357,7 +360,7 @@ export default function HomeLayout() {
         >
           <div className="flex items-center gap-4">
             <p className="text-xs uppercase tracking-[0.38em] text-[#86a65b]">
-              All publications
+              Recent publications
             </p>
 
             <Link

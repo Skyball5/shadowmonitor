@@ -4,6 +4,7 @@ import { claimsIndustryArticle } from './claims-industry'
 import { curacaoArticle } from './curacao'
 import { iranArticle } from './iran'
 import { predictionArticle } from './prediction'
+import { reputationWarfareArticle } from './reputation-warfare'
 import type { InvestigationArticle } from './shared'
 
 export const articleMap: Record<string, InvestigationArticle> = {
@@ -13,6 +14,7 @@ export const articleMap: Record<string, InvestigationArticle> = {
   curacao: curacaoArticle,
   iran: iranArticle,
   prediction: predictionArticle,
+  'reputation-warfare': reputationWarfareArticle,
 }
 
 export type ArticleSlug = keyof typeof articleMap

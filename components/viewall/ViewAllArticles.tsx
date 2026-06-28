@@ -3,6 +3,16 @@ import SiteNav from '@/components/layout/SiteNav'
 
 const archiveItems = [
   {
+  type: 'Analysis',
+  date: 'June 2026',
+  title: 'The Market of Reputation Warfare',
+  excerpt:
+    'Private intelligence firms, SEO takedown specialists, stolen algorithms, and false attribution through planted code: in iGaming, reputation has become a weapon. Here is how the market that manufactures and destroys it on demand actually works.',
+  image: '/investigations/reputation-warfare.png',
+  tags: ['REPUTATION', 'SEO TAKEDOWNS', 'ATTRIBUTION'],
+  href: '/investigations/reputation-warfare',
+},
+  {
     type: 'Analysis',
     date: 'June 2026',
     title: 'The Other Armenia',
