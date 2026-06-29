@@ -11,7 +11,7 @@ type SiteNavProps = {
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
-  { href: '/investigations/armenia', label: 'Featured' },
+  { href: '/investigations/reputation-warfare', label: 'Featured' },
   { href: '/view-all-articles', label: 'Archive' },
 ]
 
