@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next'
+import Script from 'next/script'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import FooterGate from '@/components/layout/FooterGate'
@@ -19,14 +20,14 @@ export const metadata: Metadata = {
   description:
     'ShadowMonitor is an independent investigative publication exploring the systems behind gambling infrastructure, offshore finance, payments and grey-zone economies.',
   icons: {
-  icon: [
-    { url: '/favicon/favicon.ico' },
-    { url: '/favicon/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-    { url: '/favicon/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-  ],
-  apple: '/favicon/apple-touch-icon.png',
-},
-    openGraph: {
+    icon: [
+      { url: '/favicon/favicon.ico' },
+      { url: '/favicon/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: '/favicon/apple-touch-icon.png',
+  },
+  openGraph: {
     title: 'ShadowMonitor',
     description:
       'ShadowMonitor is an independent investigative publication exploring the systems behind gambling infrastructure, offshore finance, payments and grey-zone economies.',
@@ -68,6 +69,20 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full bg-black antialiased`}
     >
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-SYV6XNQTVP"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-SYV6XNQTVP');
+          `}
+        </Script>
+      </head>
       <body className="min-h-full flex flex-col bg-black text-white m-0">
         <div className="flex-1">{children}</div>
         <FooterGate />
