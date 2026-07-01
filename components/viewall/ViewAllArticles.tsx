@@ -143,31 +143,56 @@ function HomepageHeroBanner() {
           </div>
         </div>
 
-        <aside className="col-span-12 lg:col-span-3">
-          <div className="rounded-[24px] bg-[rgba(5,7,5,0.82)] p-3.5 backdrop-blur-sm sm:p-4">
-            <div className="text-[1.2rem] font-semibold tracking-[-0.05em] text-[#9fbe63] sm:text-[1.35rem]">
-              JUNE 2026
-            </div>
+        {/* RIGHT PANEL */}
+<aside className="col-span-12 lg:col-span-3">
+  <div className="rounded-[24px] bg-[rgba(5,7,5,0.82)] p-3.5 backdrop-blur-sm sm:p-4">
+    <div className="text-[1.2rem] font-semibold tracking-[-0.05em] text-[#9fbe63] sm:text-[1.35rem]">
+      JULY 2026
+    </div>
 
-            <div className="mt-4 text-[0.62rem] uppercase tracking-[0.28em] text-[#9ca19c] sm:text-[0.68rem]">
-              Jurisdictions in focus
-            </div>
+    <div className="mt-3 text-[0.62rem] uppercase tracking-[0.28em] text-[#9ca19c] sm:text-[0.68rem]">
+      IN PROGRESS
+    </div>
 
-            <div className="mt-4 grid grid-cols-2 gap-x-5 gap-y-4 sm:mt-5 sm:gap-x-6 sm:gap-y-4">
-              {jurisdictions.map(([code, label]) => (
-                <div key={code}>
-                  <div className="text-[1.45rem] font-medium tracking-[-0.04em] text-white sm:text-[1.55rem]">
-                    {code}
-                  </div>
+    <div className="mt-4 space-y-3.5">
+      <div className="grid grid-cols-[2.0rem_minmax(0,1fr)] gap-x-1">
+        <div className="pt-[2px] text-[10px] font-medium uppercase tracking-[0.16em] text-[#86a65b]/80 whitespace-nowrap">
+          JUL
+        </div>
+        <div className="min-w-0 text-[0.83rem] font-medium leading-[1.28] text-neutral-200">
+          World Cup 2026: How Spot-Fixing Works – From One Yellow Card to a Global Syndicate
+        </div>
+      </div>
 
-                  <div className="mt-1 text-[0.75rem] leading-snug text-[#7d837d] sm:text-[0.8rem] sm:leading-relaxed">
-                    {label}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </aside>
+      <div className="grid grid-cols-[2.0rem_minmax(0,1fr)] gap-x-1">
+        <div className="pt-[2px] text-[10px] font-medium uppercase tracking-[0.16em] text-[#86a65b]/80 whitespace-nowrap">
+          JUL
+        </div>
+        <div className="min-w-0 text-[0.83rem] font-medium leading-[1.28] text-neutral-200">
+          Grey Zone Tax: How Patent Trolls Prey on iGaming, Crypto, and Whatever Comes Next
+        </div>
+      </div>
+
+      <div className="grid grid-cols-[2.0rem_minmax(0,1fr)] gap-x-1">
+        <div className="pt-[2px] text-[10px] font-medium uppercase tracking-[0.16em] text-[#86a65b]/80 whitespace-nowrap">
+          AUG
+        </div>
+        <div className="min-w-0 text-[0.83rem] font-medium leading-[1.28] text-neutral-200">
+          How Illegal Betting Feeds the Shadow Crypto Economy
+        </div>
+      </div>
+
+      <div className="grid grid-cols-[2.0rem_minmax(0,1fr)] gap-x-1">
+        <div className="pt-[2px] text-[10px] font-medium uppercase tracking-[0.16em] text-[#86a65b]/80 whitespace-nowrap">
+          AUG
+        </div>
+        <div className="min-w-0 text-[0.83rem] font-medium leading-[1.28] text-neutral-200">
+          The Reform Nobody Planned: The Rise and Fall of Austria's Online Gambling Monopoly
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>
       </div>
     </section>
   )
