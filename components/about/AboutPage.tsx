@@ -5,102 +5,76 @@ const heroImage = '/about/about-hero.png'
 
 function AboutHeroVisual() {
   return (
-    <article className="overflow-hidden rounded-[28px] bg-neutral-950">
-      <div className="relative px-5 py-2 sm:px-6 sm:py-4 lg:min-h-[360px] lg:px-9 lg:py-9">
-        <div className="relative z-30 flex flex-col lg:w-[60%] lg:pr-8">
-          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-            <div className="text-[0.68rem] uppercase tracking-[0.18em] text-[#86a65b] sm:text-xs">
-              About ShadowMonitor
-            </div>
+    <div className="relative isolate bg-neutral-950 sm:min-h-[500px] sm:overflow-hidden sm:rounded-[30px]">
+      <div className="hidden sm:block absolute inset-0 bg-[radial-gradient(circle_at_14%_18%,rgba(134,166,91,0.08),transparent_26%),radial-gradient(circle_at_80%_22%,rgba(134,166,91,0.06),transparent_20%),linear-gradient(180deg,rgba(255,255,255,0.03),transparent_28%)]" />
 
-            <div className="h-1 w-1 rounded-full bg-neutral-500" />
+      <div className="absolute inset-y-0 right-0 hidden w-[62%] md:block">
+        <img
+          src={heroImage}
+          alt="ShadowMonitor About Hero"
+          className="h-full w-full object-cover object-[68%_50%] brightness-[1.04] contrast-[1.02]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-l from-black/10 via-black/8 to-transparent" />
+      </div>
 
-            <div className="text-[0.68rem] text-neutral-500 sm:text-xs">
-              Independent Investigative Intelligence
-            </div>
+      <div className="hidden sm:block absolute inset-0 bg-[linear-gradient(90deg,rgba(7,10,7,0.98)_0%,rgba(7,10,7,0.95)_22%,rgba(7,10,7,0.72)_40%,rgba(7,10,7,0.22)_68%,rgba(7,10,7,0.02)_100%)]" />
+
+      <div className="relative flex flex-col px-4 py-4 sm:min-h-[500px] sm:px-8 sm:py-8 lg:px-12">
+        <div className="flex flex-wrap items-center gap-3">
+          <div className="text-[10px] uppercase tracking-[0.18em] text-[#86a65b] sm:text-xs">
+            About ShadowMonitor
           </div>
 
-          <div className="mt-4 max-w-3xl sm:mt-5">
-            <h1 className="max-w-3xl text-[clamp(1.55rem,2.1vw,2.55rem)] font-semibold leading-[0.95] tracking-[-0.04em] text-neutral-100 sm:text-[clamp(1.7rem,2.3vw,2.8rem)]">
-              Investigating the Systems Behind the Grey Zone
-            </h1>
+          <div className="h-1 w-1 rounded-full bg-neutral-500" />
 
-            <div className="mt-5 flex flex-wrap gap-2 sm:mt-6">
-  {['iGaming', 'Crypto', 'Offshore Finance', 'Payments', 'Infrastructure'].map(
-    (tag) => (
-      <span
-        key={tag}
-        className="rounded-full bg-white/5 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-white/55 sm:text-[11px]"
-      >
-        {tag}
-      </span>
-    ),
-  )}
-</div>
-
-<div className="mt-6 max-w-[34rem] sm:mt-7">
-  <div className="rounded-[24px] border border-white/10 bg-white/[0.03] px-5 py-5 sm:px-6 sm:py-6">
-    <blockquote className="space-y-4">
-      <p className="text-[clamp(0.95rem,1.05vw,1.05rem)] leading-relaxed text-neutral-300">
-        We analyse how systems emerge, adapt and evolve under pressure. Our focus is on the
-        structures beneath events — the incentives, regulatory frameworks and hidden dynamics
-        that shape outcomes long before they become visible.
-      </p>
-    </blockquote>
-
-    <p className="mt-4 text-sm font-medium text-neutral-300 sm:mt-5">
-      — Daryn Kellan, Founder &amp; Editor
-    </p>
-  </div>
-</div>
-
-<div className="mt-6 sm:mt-8">
-  <Link
-    href="/"
-    className="inline-flex w-fit items-center gap-2 rounded-full border border-[#86a65b]/40 bg-[#86a65b] px-4 py-2 text-sm font-medium text-neutral-950 transition hover:bg-[#9bc45f] hover:border-[#9bc45f]"
-  >
-    ← Back to ShadowMonitor
-  </Link>
-</div>
+          <div className="text-[10px] text-neutral-500 sm:text-xs">
+            Independent Investigative Intelligence
           </div>
         </div>
 
-        <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[44%] overflow-hidden rounded-r-[28px] lg:block">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_14%_18%,rgba(134,166,91,0.08),transparent_26%),radial-gradient(circle_at_80%_22%,rgba(134,166,91,0.06),transparent_20%),linear-gradient(180deg,rgba(255,255,255,0.03),transparent_28%)]" />
+        <div className="mt-12 max-w-3xl sm:mt-24">
+          <h1 className="max-w-3xl text-[clamp(2rem,8.5vw,3.8rem)] font-semibold leading-[0.96] tracking-[-0.04em] text-neutral-100 sm:text-[clamp(2.6rem,3.6vw,3.8rem)]">
+            Investigating the Systems Behind the Grey Zone
+          </h1>
 
-          <div
-            className="absolute inset-0"
-            style={{
-              WebkitMaskImage:
-                'radial-gradient(ellipse at center, black 54%, transparent 100%)',
-              maskImage: 'radial-gradient(ellipse at center, black 54%, transparent 100%)',
-            }}
-          >
-            <img
-              src={heroImage}
-              alt="ShadowMonitor About Hero"
-              className="absolute inset-0 h-full w-full object-cover"
-              style={{
-                transform: 'translateX(-2%) scale(1)',
-                transformOrigin: 'center center',
-                objectPosition: '92% 46%',
-              }}
-            />
+          <div className="mt-5 flex flex-wrap gap-2 sm:mt-7">
+            {['iGaming', 'Crypto', 'Offshore Finance', 'Payments', 'Infrastructure'].map(
+              (tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full bg-white/5 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-white/55 sm:text-[11px]"
+                >
+                  {tag}
+                </span>
+              ),
+            )}
           </div>
 
-          <div className="absolute inset-0 bg-gradient-to-l from-black/10 via-black/5 to-transparent" />
+          <div className="mt-6 max-w-2xl sm:mt-7">
+            <div className="rounded-[24px] border border-white/12 bg-black/40 px-5 py-5 sm:px-6 sm:py-6">
+              <blockquote className="space-y-4">
+                <p className="text-[clamp(0.95rem,1.05vw,1.05rem)] leading-relaxed text-neutral-300">
+                  We analyse how systems emerge, adapt and evolve under pressure. Our focus is on the
+                  structures beneath events — the incentives, regulatory frameworks and hidden dynamics
+                  that shape outcomes long before they become visible.
+                </p>
+              </blockquote>
 
-<div className="absolute inset-y-0 left-0 w-[14%] bg-gradient-to-r from-neutral-950 via-neutral-950/85 to-transparent" />
+              <p className="mt-4 text-sm font-medium text-neutral-300 sm:mt-5">
+                — Daryn Kellan, Founder &amp; Editor
+              </p>
+            </div>
+          </div>
 
-<div className="absolute inset-y-0 left-[10%] w-[10%] bg-neutral-950/25 blur-2xl" />
-
-<div className="absolute inset-y-0 right-0 w-[12%] bg-gradient-to-l from-neutral-950/70 to-transparent" />
-
-<div className="absolute inset-x-0 top-0 h-[14%] bg-gradient-to-b from-neutral-950/60 to-transparent" />
-<div className="absolute inset-x-0 bottom-0 h-[16%] bg-gradient-to-t from-neutral-950/60 to-transparent" />
+          <Link
+            href="/"
+            className="mt-10 inline-flex w-fit items-center gap-2 rounded-full border border-[#86a65b]/40 bg-[#86a65b] px-4 py-2 text-sm font-medium text-neutral-950 transition hover:border-[#9bc45f] hover:bg-[#9bc45f] sm:mt-12"
+          >
+            ← Back to ShadowMonitor
+          </Link>
         </div>
       </div>
-    </article>
+    </div>
   )
 }
 
